@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations
+END
+PhoneticAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/PhoneticAlgorithm.java
+END
+AcronymAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/AcronymAlgorithm.java
+END
+RelationAlgorithmContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/RelationAlgorithmContext.java
+END
+GeneralDelimitersAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/GeneralDelimitersAlgorithm.java
+END
+IRelationAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/IRelationAlgorithm.java
+END
+VendorAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/VendorAlgorithm.java
+END
+VersionAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/VersionAlgorithm.java
+END
+NegativeSentimentAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/NegativeSentimentAlgorithm.java
+END
+KnownSynonymsAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/relations/KnownSynonymsAlgorithm.java
+END

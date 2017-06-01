@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model
+END
+IPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/IPredicate.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/User.java
+END
+Search.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/Search.java
+END
+TermPredicates.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/TermPredicates.java
+END
+Terms.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/Terms.java
+END
+StemmedTermComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/StemmedTermComparator.java
+END
+StemmedTermContainsComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/StemmedTermContainsComparator.java
+END
+TermComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/TermComparator.java
+END
+TermContainsComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/TermContainsComparator.java
+END
+ExtractionMethodsContainsComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/ExtractionMethodsContainsComparator.java
+END
+IComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/IComparator.java
+END
+StemmedTermStartsWithComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/StemmedTermStartsWithComparator.java
+END
+TermSorters.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/TermSorters.java
+END
+SearchResultGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/SearchResultGroup.java
+END
+TermStartsWithComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/TermStartsWithComparator.java
+END
+SearchResultItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/SearchResultItem.java
+END
+EnabledComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/EnabledComparator.java
+END
+FrequencyGreaterThanComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/FrequencyGreaterThanComparator.java
+END
+FrequencyComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/FrequencyComparator.java
+END
+IdComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/IdComparator.java
+END
+SourceComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/model/SourceComparator.java
+END

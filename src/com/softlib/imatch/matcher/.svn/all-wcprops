@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/iMatch/!svn/ver/2088/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher
+END
+CandidateScore.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidateScore.java
+END
+CandidateRank.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidateRank.java
+END
+AuthorizeConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/AuthorizeConfig.java
+END
+ICandidatesSubprocessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ICandidatesSubprocessor.java
+END
+CandidatesRanker.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidatesRanker.java
+END
+IMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/IMatcher.java
+END
+TicketingSystemSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/TicketingSystemSettings.java
+END
+CandidatesStarHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidatesStarHandler.java
+END
+CandidatesRankingConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidatesRankingConfig.java
+END
+ITicketsRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ITicketsRepository.java
+END
+TicketingSystemConnectionSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/TicketingSystemConnectionSettings.java
+END
+FieldBoostMapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/iMatch/!svn/ver/2047/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/FieldBoostMapping.java
+END
+SecurityConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/SecurityConfig.java
+END
+SearcherConfigurationConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/SearcherConfigurationConverter.java
+END
+InMemoryTicketFieldsNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/2047/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/InMemoryTicketFieldsNames.java
+END
+CandidatesSorter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidatesSorter.java
+END
+TicketingSystemFieldMapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/TicketingSystemFieldMapping.java
+END
+ICandidatesProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ICandidatesProcessor.java
+END
+CandidateTitleCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidateTitleCalculator.java
+END
+MatchResults.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/2069/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/MatchResults.java
+END
+Statement.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/Statement.java
+END
+CandidatesRankingModeConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidatesRankingModeConfig.java
+END
+DBTicketFieldsNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/2047/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/DBTicketFieldsNames.java
+END
+DefaultCandidatesProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/DefaultCandidatesProcessor.java
+END
+SearcherConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/SearcherConfiguration.java
+END
+TicketingSystemBodyFields.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/TicketingSystemBodyFields.java
+END
+ISingleCandidateProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ISingleCandidateProcessor.java
+END
+ViewLayoutOriginObjects.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ViewLayoutOriginObjects.java
+END
+MatchCandidate.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/2019/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/MatchCandidate.java
+END
+TermsDistanceConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/TermsDistanceConfig.java
+END
+Condition.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/Condition.java
+END
+IRankingConfigurationProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/IRankingConfigurationProvider.java
+END
+ITicketFieldsNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/2047/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ITicketFieldsNames.java
+END
+CandidatesIncluder.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidatesIncluder.java
+END
+CandidateEnricher.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/CandidateEnricher.java
+END
+Matcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/iMatch/!svn/ver/2088/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/Matcher.java
+END
+ViewLayoutSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ViewLayoutSettings.java
+END
+TicketingSystemIntegrationConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/iMatch/!svn/ver/2047/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/TicketingSystemIntegrationConfig.java
+END
+ViewLayoutConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/ViewLayoutConfig.java
+END

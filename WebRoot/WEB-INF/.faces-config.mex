@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="" location="30,30" dimension="36,36" />
+  <JSFFlowResource path="/error.xhtml" location="180,30" dimension="107,36" />
+  <JSFFlowResource path="/login.xhtml" location="480,30" dimension="109,36" />
+  <JSFFlowResource path="/pages/index.xhtml" location="30,130" dimension="146,36" />
+  <JSFFlowNavigationCase id=",/error.xhtml,error,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="66,48" />
+      <AbsolutePoint location="180,48" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/login.xhtml,login,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="48,30" />
+      <AbsolutePoint location="48,-7" />
+      <AbsolutePoint location="534,-7" />
+      <AbsolutePoint location="534,30" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/pages/index.xhtml,main,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="48,66" />
+      <AbsolutePoint location="48,130" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/login.xhtml,/pages/index.xhtml,success,#{userBean.loginUser}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="534,66" />
+      <AbsolutePoint location="534,148" />
+      <AbsolutePoint location="176,148" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/login.xhtml,/login.xhtml,failure,#{userBean.loginUser}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="549,66" />
+      <AbsolutePoint location="549,103" />
+      <AbsolutePoint location="626,103" />
+      <AbsolutePoint location="626,48" />
+      <AbsolutePoint location="589,48" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

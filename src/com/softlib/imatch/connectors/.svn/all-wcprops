@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/iMatch/!svn/ver/2020/branches/iMatch%20for%20VA/src/com/softlib/imatch/connectors
+END
+BaseTicketProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/iMatch/!svn/ver/1977/branches/iMatch%20for%20VA/src/com/softlib/imatch/connectors/BaseTicketProvider.java
+END
+EmptyTicketProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/connectors/EmptyTicketProvider.java
+END

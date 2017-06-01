@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:jawr="https://jawr.dev.java.net/jsf/facelets">
+
+
+<ui:composition>
+	<div class="iMatchHeader">
+		<table style="width: 100%; border-collapse: collapse;" cellpadding="0" cellspacing="0">
+			<tr>
+				<td style="width: 340px;">
+					<table class="search" cellpadding="0" cellspacing="0">
+						<tr>
+							<td class="bgLeft"></td>
+							<td class="bgMiddle">
+								<table style="width: 100%;" cellpadding="0" cellspacing="0">
+									<tr>
+										<td class="searchTextBoxSpan">
+											<input type="text" class="searchTextBox" id="searchTicketID" onkeypress="iMatchOnkeyPress(event, '1');" />
+											<input type="text" style="display: none;" />
+											<input type="hidden" id="matchingTicketID" />
+											<input type="hidden" id="searchID" />
+										</td>
+										<td class="searchButtonSpan">
+											<div class="searchButton" id="searchButton" onclick="match('1');"></div>
+										</td>
+										<td id="matchContainers" class="matchContainers">
+											<h:selectOneMenu id="matchContainer" style="width: 100px; margin-left: 5px;">
+												<f:selectItems value="#{searchBean.matchContainers}" />
+											</h:selectOneMenu>	
+										</td>
+										<td class="advancedSearchSpan">
+											<h:outputText value=" " />
+											<a href="#" id="freeTextButton" onclick="openFreeTextMatch(true);"><h:outputText value="#{bundle.search_freeText}" /></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td class="bgRight"></td>
+						</tr>
+					</table>
+				</td>
+				<td style="padding-left: 10px; display: #{securityBean.security.serverSecurity.name == 'SECURED' ? '' : 'none'};">
+					<table>
+						<tr>
+							<td class="usernameIcon" title="#{bundle.login_username_label}">
+									
+							</td>
+							<td>
+								<h:outputText styleClass="username" value="#{userBean.user.displayName}"></h:outputText>
+							</td>
+							<td class="logoutIcon" title="#{bundle.logout}" onclick="location.href='../logout.jsf';" style="display: #{securityBean.security.serverSecurity.name == 'SECURED' ? '' : 'none'};">
+												
+							</td>
+						</tr>
+					</table>
+				</td>
+				
+				<!-- 
+				<td class="MatchFeedbackButton" style="display: none;">
+					<table>
+						<tr>
+							<td class="feedbackIcon" title="#{bundle.globalMatchFeedbackButton}">
+							
+							</td>
+							<td>
+								<a href="#" style="color: white; cursor: pointer;">#{bundle.globalMatchFeedbackButton}</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				 -->
+				<td class="iMatchHeaderLogo" style="width: 190px;" title="#{bundle.iMatchVersion}">
+							
+				</td>
+			</tr>
+		</table>
+	</div>
+</ui:composition>
+</html>

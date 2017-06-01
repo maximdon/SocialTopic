@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:jawr="https://jawr.dev.java.net/jsf/facelets">
+	
+<ui:composition>
+	<div id="AddSynonymPanel" style="display: none;" title="#{bundle.AddSynonymPanel}">
+		<h:outputText value="#{bundle.term}"></h:outputText>
+	    <br/>
+	    <input id="termSynonym" type="text" maxlength="100" style="width: 100%;" readonly="readonly" />
+        <p/>
+        <h:outputText value="#{bundle.synonym}"></h:outputText>
+	    <br/>
+	    <input id="synonym" type="text" autocomplete="off" maxlength="100" style="width: 100%;" />
+	    <div id="AddSynonymPanelSourceDiv">
+		    <h:outputText value="#{bundle.source}"></h:outputText>
+		    <br/>
+		    <span id="sourceSpan"></span>
+	    </div>
+	</div>
+	
+	<div id="RemoveTermPanel" style="display: none;" title="#{bundle.areYouSure}">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>#{bundle.removeTermMsg}</p>
+	</div>
+	
+	<div id="AddTermToDictionaryPanel" style="display: none;" title="#{bundle.AddTermToDictionaryPanel}">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>#{bundle.addTermToDictionaryMsg}</p>
+	</div>
+	
+	<div id="GlobalMatchFeedbackPanel" style="display: none;" title="#{bundle.GlobalMatchFeedback}">
+		<h:outputText value="#{bundle.feedback}" /> (<h:outputText value="#{bundle.optional}" />)
+	    <br/>
+	    <textarea id="globalMatchFeedback" style="width: 99%; height: 200px;" />
+        <p/>
+	</div>
+	
+	<div id="FreeTextMatchPanel" style="display: none;" title="#{bundle.FreeTextMatchPanel}">
+		<h:outputText value="#{bundle.title}" />
+		<br/>
+		<h:inputText id="ticketTitle" value="#{param.SoftlibSubject}" style="width: 100%;" />
+	    <br/>
+	    <h:outputText value="#{bundle.content}" />
+	    <br/>
+	    <h:inputTextarea id="ticketFreeText" style="width: 98%; height: 100px;" value="#{param.SoftlibBody}">
+									
+		</h:inputTextarea>
+        <p/>
+	</div>
+	
+	<div id="TermRelationsPanel" style="display: none;" title="#{bundle.TermRelationsPanel}">
+		<table id="termsRelationList"></table>
+		<div id="termsRelationListPager"></div>
+	</div>
+</ui:composition>
+</html>

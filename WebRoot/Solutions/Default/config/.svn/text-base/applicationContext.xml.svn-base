@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- Common section -->
+	<bean id="cacheManager" class="com.softlib.imatch.common.cache.EHCacheManager">
+	</bean>
+	
+	<bean id="xmlConfigurationResourceLoader" class="com.softlib.imatch.common.configuration.XMLConfigurationResourceLoader">
+	</bean>	
+	<bean id="multitenantObjectCreator" class="com.softlib.imatch.MultitenantSolutionBeanCreator">
+	</bean>
+	<bean id="dictionary" class="com.softlib.imatch.dictionary.TechnicalDictionary">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<property name="textCleaners">
+			<list>
+				<ref bean="javaExceptionCleaner"/>
+				<ref bean="dotNetExceptionCleaner"/>
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="javaExceptionCleaner" class="com.softlib.imatch.dictionary.JavaStackTraceHandler">
+		<constructor-arg value="(java|javax|oracle|weblogic|com)([\.|\$]\w*){1,10}(?=[\(|\s])?"></constructor-arg>
+	</bean>
+
+	<bean id="dotNetExceptionCleaner" class="com.softlib.imatch.dictionary.RegexBasedSpecialTextHandler">
+		<constructor-arg value="(System|SAP)(\.\w*){1,5}(?=\()?"></constructor-arg>
+	</bean>
+
+	<bean id="termBooster" class="com.softlib.imatch.dictionary.TechnicalTermBooster">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	<bean id="scoreCalculator" class="com.softlib.imatch.ticketprocessing.RangeTfIdfFormulaScoreCalculator">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	<bean id="scoreTermsReorder" class="com.softlib.imatch.score.TermsScoreReorderDoNothing">
+		
+	</bean>
+	<!-- Ticketing system integration section -->	
+	<bean id="ticketProviderFactory" class="com.softlib.imatch.TicketProviderFactory">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	<bean id="jdbcDriverLoader" class="com.softlib.imatch.dbintegration.DriverLoader" lazy-init="true">
+		<property name="supportedDrivers">
+			<list>
+			</list>
+		</property>
+	</bean>
+	<bean id="millisecondsToDateStatementAnalyzer" class="com.softlib.imatch.dbintegration.MillisecondsToDateStatementAnalyzer">
+	</bean>
+	<!-- Matcher section -->
+	<bean id="ticketProcessor" class="com.softlib.imatch.ticketprocessing.TicketProcessor">
+		<property name="dictAPISteps">
+			<list>
+				<ref bean="commonMisspellingsStep"/>
+				<ref bean="dictionaryTokensStep"/>
+				<!-- <ref bean="extractVersionsByNLP"/> 
+				<ref bean="negativeSentimentStep"/>-->
+				<ref bean="iSolveQueryAsTermStep"/>
+			</list>
+		</property>
+		<property name="indexSteps">
+			<list>
+				<ref bean="dictionaryTokensStep"/>
+				<ref bean="urlParserStep"/>
+				<ref bean="IndexTerms"/>
+			</list>
+		</property>
+		<property name="matchSteps">
+			<list>
+				<ref bean="cleanStep"/>
+				<!--<ref bean="quoteTermsStep"/>
+				<ref bean="errorCodesStep"/>
+				<ref bean="errorCodesGenericStep"/> 
+				<ref bean="longTermsStep"/>-->
+				
+				<!--<ref bean="versionsStep"/>
+				<ref bean="exceptionsStep"/>	 			 
+				<ref bean="dashedTermsStep"/>
+				<ref bean="negativeSentimentStep"/>				
+				<ref bean="extractTechPatternByNLP"/>-->
+				<!--<ref bean="extractVersionsByNLP"/>						<ref bean="extractADJPbyNLP"/>
+				<ref bean="extractADVPbyNLP"/>
+				<ref bean="extractPPbyNLP"/>-->
+				<ref bean="extractProximityTermsByNLP"/>
+				<ref bean="dictionaryTokensStep"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="iSolveQueryAsTermStep" class="com.softlib.imatch.ticketprocessing.ISolveQueryAsTermStep">
+		<constructor-arg value="3"/>
+	</bean>	
+	<bean id="urlParserStep" class="com.softlib.imatch.ticketprocessing.UrlParserStep" lazy-init="true"/>	
+	<bean id="longTermsStep" class="com.softlib.imatch.ticketprocessing.LongTermsTechTokens"/>
+	<bean id="commonMisspellingsStep" class="com.softlib.imatch.ticketprocessing.CommonMisspellingsStep" />	
+	<bean id="negativeSentimentStep" class="com.softlib.imatch.ticketprocessing.NegativeSentimentStep" lazy-init="true"/>	
+	<bean id="IndexTerms" class="com.softlib.imatch.ticketprocessing.IndexTerms" />
+	<bean id="cleanStep" class="com.softlib.imatch.ticketprocessing.Clean" /> 
+	<bean id="dictionaryTokensStep" class="com.softlib.imatch.ticketprocessing.DictionaryTerms" />
+	<bean id="extractTechPatternByNLP" class="com.softlib.imatch.ticketprocessing.ExtractTechPatternByNLP" lazy-init="true" />
+	<bean id="extractProximityTermsByNLP" class="com.softlib.imatch.ticketprocessing.ExtractProximityTermsByNLP" lazy-init="true"/>
+	<bean id="extractDensityTermsByNLP" class="com.softlib.imatch.ticketprocessing.ExtractDensityTermsByNLP" lazy-init="true"/>
+	<bean id="extractVersionsByNLP" class="com.softlib.imatch.ticketprocessing.ExtractVersionsByNLP" lazy-init="true"/>
+	<bean id="extractADJPbyNLP" class="com.softlib.imatch.ticketprocessing.ExtractADJPbyNLP" lazy-init="true"/>
+	<bean id="extractADVPbyNLP" class="com.softlib.imatch.ticketprocessing.ExtractADVPbyNLP" lazy-init="true"/>
+	<bean id="extractPPbyNLP" class="com.softlib.imatch.ticketprocessing.ExtractPPbyNLP" lazy-init="true"/>
+	<bean id="quoteTermsStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="quoteTerms"></constructor-arg>
+	</bean>
+	<bean id="errorCodesStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="errorCodes"></constructor-arg>
+	</bean>			
+	<bean id="errorCodesGenericStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="errorCodesGeneric"></constructor-arg>
+	</bean>			
+	<bean id="dashedTermsStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="dashedTerms"></constructor-arg>
+	</bean>
+	<bean id="versionsStep" class="com.softlib.imatch.ticketprocessing.VersionsTechToknes" />
+	<bean id="exceptionsStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="exceptions"></constructor-arg>
+	</bean>
+		
+	<bean id="repositoryFactory" class="com.softlib.imatch.matcher.lucene.agent.VALuceneFactory" />
+	<bean id="repositoryWordFactory" class="com.softlib.imatch.matcher.lucene.customscore.LuceneWordFactory" />
+	
+	<!-- Utilities section -->
+	<bean id="performanceTracker" class="com.softlib.imatch.common.PerformanceTracker">
+	</bean>
+	<bean id="ticketTracker" class="com.softlib.imatch.common.TicketTracker">
+	</bean>
+	
+	<bean id="taxonomyToolEngine" class="com.softlib.taxonomytool.engine.Engine" lazy-init="true">
+		<constructor-arg value="jdbc:sqlserver://192.168.10.25;databaseName=TaxonomyTool;user=sa;password=Softlib_2;"></constructor-arg>
+	</bean>
+</beans>

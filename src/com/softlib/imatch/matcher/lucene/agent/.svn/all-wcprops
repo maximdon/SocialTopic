@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent
+END
+VALuceneFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent/VALuceneFactory.java
+END
+VAAllTermsAndOrphansAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/iMatch/!svn/ver/2031/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent/VAAllTermsAndOrphansAction.java
+END
+VAAllOrphansAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/2031/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent/VAAllOrphansAction.java
+END
+VAAllTermsAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/2070/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent/VAAllTermsAction.java
+END
+VABaseAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/2081/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent/VABaseAction.java
+END
+LuceneVirtualAgentSearcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/iMatch/!svn/ver/2081/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/agent/LuceneVirtualAgentSearcher.java
+END

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Matcher section -->
+	<bean id="matcher" class="com.softlib.imatch.matcher.Matcher" lazy-init="true">
+		<!-- note, ticketProcessor and ticketRepository defined in common context -->
+		<constructor-arg ref="ticketProcessor"></constructor-arg>
+		<constructor-arg ref="ticketsRepository"></constructor-arg>
+		<constructor-arg ref="candidatesProcessor"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+	</bean>
+	
+	<bean id="ticketsRepository" class="com.softlib.imatch.matcher.lucene.LuceneTicketsRepository" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+		
+		
+	<bean id="candidatesProcessor" class="com.softlib.imatch.matcher.DefaultCandidatesProcessor" lazy-init="true">
+		<property name="subProcessors">
+			<list>
+				<ref bean="candidatesIncluder"/>
+				<ref bean="candidatesRanker"/>
+				<ref bean="candidatesFilter"/>
+				<ref bean="candidatesSorter"/>
+			</list>
+		</property>
+		<property name="singleProcessors">
+			<list>
+				<!--<ref bean="candidateEnricher"/>-->
+				<!-- TODO custom booster is not in use for now -->
+				<!-- <ref bean="customBooster"/> -->
+			</list>
+		</property>		
+	</bean>
+	<bean id="candidateEnricher" class="com.softlib.imatch.matcher.CandidateEnricher" lazy-init="true">
+	</bean>
+	<bean id="candidatesRanker" class="com.softlib.imatch.matcher.CandidatesRanker" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	<bean id="customBooster" class="com.softlib.imatch.matcher.boost.CustomBooster" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	<bean id="candidatesSorter" class="com.softlib.imatch.matcher.CandidatesSorter" lazy-init="true">
+	</bean>
+	<bean id="candidatesIncluder" class="com.softlib.imatch.matcher.CandidatesIncluder" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	
+	<bean id="candidatesFilter" class="com.softlib.imatch.matcher.filter.CandidatesFilter" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<property name="matchSubFilters">
+			<list>
+				<ref bean="VANumCandidates"/>
+			</list>
+		</property>
+		<property name="rematchSubFilters">
+			<list>
+				<ref bean="VANumCandidatesRematch"/>
+			</list>
+		</property>
+	</bean>	
+	<bean id="minScore" class="com.softlib.imatch.matcher.filter.MinScoreCandidatesSubfilter" lazy-init="true">
+	</bean>
+	<bean id="maxDistance" class="com.softlib.imatch.matcher.filter.MaxDistanceCandidatesSubfilter" lazy-init="true">
+	</bean>
+	<bean id="numCandidates" class="com.softlib.imatch.matcher.filter.NumCandidatesSubfilter" lazy-init="true">
+	</bean>
+	<bean id="VANumCandidates" class="com.softlib.imatch.matcher.filter.VANumCandidatesSubfilter" lazy-init="true">
+	</bean>	
+	<!-- Due to configuration issues these beans should be duplicated -->
+	<bean id="minScoreRematch" class="com.softlib.imatch.matcher.filter.MinScoreCandidatesSubfilter" lazy-init="true">
+	</bean>
+	<bean id="maxDistanceRematch" class="com.softlib.imatch.matcher.filter.MaxDistanceCandidatesSubfilter" lazy-init="true">
+	</bean>
+	<bean id="numCandidatesRematch" class="com.softlib.imatch.matcher.filter.NumCandidatesSubfilter" lazy-init="true">
+	</bean>
+	<bean id="VANumCandidatesRematch" class="com.softlib.imatch.matcher.filter.VANumCandidatesSubfilter" lazy-init="true">
+	</bean>		
+	
+	<bean id="topNTerms" class="com.softlib.imatch.score.TopNTerms" lazy-init="true">
+	</bean>
+	
+	<bean id="MatchProcessor" class="com.softlib.imatch.matcher.lucene.agent.LuceneVirtualAgentSearcher" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<property name="subProcessors">
+			<list>
+				<ref bean="VAAllTermsWhenNoOrphans"/>
+				<ref bean="VAAllOrphansWhenNoTerms"/>
+				<ref bean="VAAllTermsAndOrphans"/>
+				<ref bean="VAAllTermsSomeOrphans"/>
+				<ref bean="VAAllTermsIgnoreOrphans"/>
+				<ref bean="VASomeTermsAllOrphans"/>
+				<ref bean="VASomeTerms"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="VAAllTermsWhenNoOrphans" class="com.softlib.imatch.matcher.lucene.agent.VAAllTermsAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+	</bean>
+	<bean id="VAAllOrphansWhenNoTerms" class="com.softlib.imatch.matcher.lucene.agent.VAAllOrphansAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+	</bean>
+	<bean id="VAAllTermsAndOrphans" class="com.softlib.imatch.matcher.lucene.agent.VAAllTermsAndOrphansAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+	</bean>
+	<bean id="VAAllTermsSomeOrphans" class="com.softlib.imatch.matcher.lucene.agent.VAAllTermsAndOrphansAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+	</bean>
+	<bean id="VAAllTermsIgnoreOrphans" class="com.softlib.imatch.matcher.lucene.agent.VAAllTermsAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+	</bean>
+	<bean id="VASomeTerms" class="com.softlib.imatch.matcher.lucene.agent.VAAllTermsAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+	</bean>
+	<bean id="VASomeTermsAllOrphans" class="com.softlib.imatch.matcher.lucene.agent.VAAllTermsAndOrphansAction" lazy-init="true">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="0"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+	</bean>
+	
+	<bean id="nlp" class="com.softlib.imatch.nlp.SimpleNlpProvider"/>
+	
+	<!-- Comparison operators (for custom boost) -->
+	<bean id="gt" class="com.softlib.imatch.matcher.boost.GreaterThanOperator" lazy-init="true"/>
+	<bean id="lt" class="com.softlib.imatch.matcher.boost.LessThanOperator" lazy-init="true"/>
+	<bean id="equals" class="com.softlib.imatch.matcher.boost.EqualsOperator" lazy-init="true"/>
+	<bean id="contains" class="com.softlib.imatch.matcher.boost.ContainsOperator" lazy-init="true"/>	
+</beans>

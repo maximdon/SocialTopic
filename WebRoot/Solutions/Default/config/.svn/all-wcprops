@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/iMatch/!svn/ver/2106/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config
+END
+usageReportConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/usageReportConfig.xml
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/iMatch/!svn/ver/2046/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/log4j.xml
+END
+negativeSentimentPatterns.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/negativeSentimentPatterns.xml
+END
+proximity.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/2061/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/proximity.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/2060/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/applicationContext.xml
+END
+license.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/license.xml
+END
+patterns.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/2002/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/patterns.xml
+END
+cacheConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/cacheConfig.xml
+END
+log4j-console.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1999/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/log4j-console.xml
+END
+product.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/2060/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/product.sql
+END
+hibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1999/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/hibernate.cfg.xml
+END
+sourceBoost.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/sourceBoost.xml
+END
+matchFinder.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/matchFinder.xml
+END
+matcher.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/2071/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/matcher.xml
+END
+webApplicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/2071/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/webApplicationContext.xml
+END
+oneFreq.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/2039/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/oneFreq.sql
+END
+consoleApplicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/iMatch/!svn/ver/2106/branches/iMatch%20for%20VA/WebRoot/Solutions/Default/config/consoleApplicationContext.xml
+END

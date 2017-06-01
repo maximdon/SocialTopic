@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/iMatch/!svn/ver/2020/branches/iMatch%20for%20VA/src/com/softlib/imatch
+END
+ICustomFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ICustomFactory.java
+END
+ServerState.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ServerState.java
+END
+TicketProviderFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/2020/branches/iMatch%20for%20VA/src/com/softlib/imatch/TicketProviderFactory.java
+END
+StageMngr.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/StageMngr.java
+END
+SolutionFolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/iMatch/!svn/ver/1977/branches/iMatch%20for%20VA/src/com/softlib/imatch/SolutionFolder.java
+END
+RuntimeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/RuntimeInfo.java
+END
+ITicketProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ITicketProvider.java
+END
+TicketState.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/TicketState.java
+END
+MultitenantRuntimeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/MultitenantRuntimeInfo.java
+END
+MatcherException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/MatcherException.java
+END
+BaseTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/BaseTicket.java
+END
+ConsoleAppRuntimeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/ConsoleAppRuntimeInfo.java
+END
+MultitenantThreadInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/1997/branches/iMatch%20for%20VA/src/com/softlib/imatch/MultitenantThreadInfo.java
+END
+IContextInitializationListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/IContextInitializationListener.java
+END
+WebAppRuntimeInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/WebAppRuntimeInfo.java
+END
+ITicketRetrievedCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ITicketRetrievedCallback.java
+END
+ThreadInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/iMatch/!svn/ver/1997/branches/iMatch%20for%20VA/src/com/softlib/imatch/ThreadInfo.java
+END
+WebAppInitializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1997/branches/iMatch%20for%20VA/src/com/softlib/imatch/WebAppInitializer.java
+END
+ITicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ITicket.java
+END
+ServerConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ServerConfiguration.java
+END
+InMemoryTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/InMemoryTicket.java
+END

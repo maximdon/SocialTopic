@@ -1,0 +1,4 @@
+<!-- Capital words not in beginning of sentence. This regex handles terms with at least two words, when the first word must have at least 2 capital letters, and the second word should start with capital letter -->
+MATCH $$$  $$$ (?<=\b\w{1,30}\s)([A-Z][A-Za-z]*[\s\p{P}]+)([A-Z][A-Za-z]*\s?){1,4}(?=[\n\s\p{P}\?])
+<!-- ALL Capital letters, single word. -->
+MATCH $$$  $$$ ([A-Z]+)(?=[\n\s\p{P}\?])

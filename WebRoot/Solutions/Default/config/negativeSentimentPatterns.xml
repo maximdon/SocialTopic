@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<negativeSentimentConfig> 	
+	<sentimentPattern>Failed to {XXX}</sentimentPattern>
+	<sentimentPattern>Cannot {XXX}</sentimentPattern>
+	<sentimentPattern>Can not {XXX}</sentimentPattern>
+	<sentimentPattern>Cant {XXX}</sentimentPattern>
+	<sentimentPattern>Can't {XXX}</sentimentPattern>
+	<sentimentPattern>Could not {XXX}</sentimentPattern>
+	<sentimentPattern>Unable to {XXX}</sentimentPattern>
+	<sentimentPattern>Error {XXX}</sentimentPattern>
+	<sentimentPattern>Exception {XXX}</sentimentPattern>
+	<sentimentPattern>Problem {XXX}</sentimentPattern>
+	<sentimentPattern>Failure {XXX}</sentimentPattern>
+	<sentimentPattern>Error during {XXX}</sentimentPattern>
+	<sentimentPattern>Exception during {XXX}</sentimentPattern>
+	<sentimentPattern>Problem during {XXX}</sentimentPattern>
+	<sentimentPattern>Failure during {XXX}</sentimentPattern>
+	<sentimentPattern>Error while {XXX}</sentimentPattern>
+	<sentimentPattern>Exception while {XXX}</sentimentPattern>
+	<sentimentPattern>Problem while {XXX}</sentimentPattern>
+	<sentimentPattern>Failure while {XXX}</sentimentPattern>
+	<sentimentPattern>Error when {XXX}</sentimentPattern>
+	<sentimentPattern>Exception when {XXX}</sentimentPattern>
+	<sentimentPattern>Problem when {XXX}</sentimentPattern>
+	<sentimentPattern>Failure when {XXX}</sentimentPattern>
+	<sentimentPattern>Error occurred during {XXX}</sentimentPattern>
+	<sentimentPattern>Exception occurred during {XXX}</sentimentPattern>
+	<sentimentPattern>Problem occurred during {XXX}</sentimentPattern>
+	<sentimentPattern>Failure occurred during {XXX}</sentimentPattern>
+	<sentimentPattern>Error occurred while {XXX}</sentimentPattern>
+	<sentimentPattern>Exception occurred while {XXX}</sentimentPattern>
+	<sentimentPattern>Problem occurred while {XXX}</sentimentPattern>
+	<sentimentPattern>Failure occurred while {XXX}</sentimentPattern>
+	<sentimentPattern>Error occurred when {XXX}</sentimentPattern>
+	<sentimentPattern>Exception occurred when {XXX}</sentimentPattern>
+	<sentimentPattern>Problem occurred when {XXX}</sentimentPattern>
+	<sentimentPattern>Failure occurred when {XXX}</sentimentPattern>
+	<sentimentPattern>{XXX} Failed</sentimentPattern>
+	<sentimentPattern>{XXX} Failure</sentimentPattern>
+	<sentimentPattern>Failing to {XXX}</sentimentPattern>
+	<sentimentPattern>{XXX} and failed</sentimentPattern>
+	<sentimentPattern>Trying to {XXX}</sentimentPattern>
+	<sentimentPattern>Will not {XXX}</sentimentPattern>
+	<sentimentPattern>{XXX} could not be completed</sentimentPattern>
+	<sentimentPattern>problem with {XXX}</sentimentPattern> 
+  	<sentimentPattern>Getting error when {XXX}</sentimentPattern> 
+  	<sentimentPattern>Get error message when {XXX}</sentimentPattern> 
+  	<sentimentPattern>no longer able to {XXX}</sentimentPattern> 
+  	<sentimentPattern>Problem with {XXX}</sentimentPattern> 
+  	<sentimentPattern>Not able to {XXX}</sentimentPattern> 
+  	<sentimentPattern>{XXX} is bad</sentimentPattern> 
+  	<sentimentPattern>Has diffuculty {XXX}</sentimentPattern> 
+  	<sentimentPattern>Problem with {XXX}</sentimentPattern> 
+	
+</negativeSentimentConfig>

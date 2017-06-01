@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/enums
+END
+HighlightType.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/enums/HighlightType.java
+END
+SecurityType.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/enums/SecurityType.java
+END
+UserLevel.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/enums/UserLevel.java
+END
+MatchErrorCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/enums/MatchErrorCodes.java
+END
+SearchType.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/enums/SearchType.java
+END

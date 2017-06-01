@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<matchConfig>	
+	<object id="vaObject">
+		<ticketingSystemIntegration type="azureblobs">
+			<azureBlobsSettings>
+				<connectionParam key="connectionString" value="website-{SolutionName}"/>
+			</azureBlobsSettings>			
+			<singleTicketStatement></singleTicketStatement>   
+			<displayTicketStatement></displayTicketStatement>
+			<changedTicketsStatement></changedTicketsStatement>
+			<allTicketsStatement></allTicketsStatement>
+			<allTicketsCountStatement></allTicketsCountStatement>
+			<fieldMapping>
+				<idField>ID</idField>
+				<titleField>Title</titleField>
+				<stateField></stateField>
+			</fieldMapping>
+			<bodyFields>							
+				<field name="Text"/>
+				<field name="Url"/>
+			</bodyFields>
+		</ticketingSystemIntegration>
+		<boostMapping>
+             <field name="Url" boost="2.0"/>
+             <field name="Title" boost="2.0"/>
+        </boostMapping>		
+		<searcher type="lucene">
+			<indexFilesLocation>{SolutionDBFolder}\indexes</indexFilesLocation>
+			<indexIntervalSeconds>600000</indexIntervalSeconds>
+			<extractIntervalSeconds>1200000</extractIntervalSeconds>
+			<numThreadsInPool>1</numThreadsInPool>
+			<indexBufferSize>200</indexBufferSize>
+			<extractBufferSize>200</extractBufferSize>
+			<minimumNumCandidates>100</minimumNumCandidates>
+			<maximumNumCandidates>500</maximumNumCandidates>
+			<indexSpecialFields>
+				<!-- Note, adding special fields requires reindexing (removing doesn't) -->
+			</indexSpecialFields>
+		</searcher>
+		<candidatesFilter>
+			<mode name="match" separateObjectsForFilter="true" filterPercentageDropOff="80" maxAuthCandidates="20" candidatesFactor="2" maxNumCandidates="4" minCandidateScore="-1" maxCandidateScore="0.99" maxScoreDistancePercentage="-1"/>
+			<mode name="rematch" separateObjectsForFilter="true" filterPercentageDropOff="80" maxAuthCandidates="20" candidatesFactor="2" maxNumCandidates="4" minCandidateScore="-1" maxCandidateScore="0.99" maxScoreDistancePercentage="-1"/>
+		</candidatesFilter>
+		<candidatesRanking>
+			<mode name="match">
+				<rank name="duplicate" icon="duplicate.jpg" intValue="4">
+				   <condition fieldName="score" operator="gt" value="0.8"/>
+				</rank>
+				<rank name="similar" icon="similar.jpg" intValue="3">
+				  <condition fieldName="score" operator="gt" value="0.55"/>
+				</rank>
+				<rank name="related" icon="related.jpg" intValue="2">
+					<condition fieldName="score" operator="gt" value="0.15"/>
+				</rank>
+			</mode>
+			<mode name="rematch">
+				<rank name="duplicate" icon="duplicate.jpg" intValue="4">
+				   <condition fieldName="score" operator="gt" value="0.85"/>
+				</rank>
+				<rank name="similar" icon="similar.jpg" intValue="3">
+				  <condition fieldName="score" operator="gt" value="0.65"/>
+				</rank>
+				<rank name="related" icon="related.jpg" intValue="2">
+					<condition fieldName="score" operator="gt" value="0.45"/>
+				</rank>
+			</mode>
+		</candidatesRanking>
+		<scorer lengthWeight="0.15" sourceWeight="0.5" freqWeight="0.05" countWeight="0.1" titleWeight="0.3" useZeroFreqTerms="false" useOneFreqTerms="false"/>		
+		<viewLayout>
+			<originObjects>
+				<object id="vaObject" title="VA Object" tabOrder="1" comboOrder="1" />
+			</originObjects>		
+			<detailsURL>detailsView.jsf?id={IssueID}</detailsURL>
+		</viewLayout>
+	</object>	
+</matchConfig>

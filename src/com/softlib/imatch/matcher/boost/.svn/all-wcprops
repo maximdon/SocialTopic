@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost
+END
+GreaterThanOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/GreaterThanOperator.java
+END
+CustomBooster.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/CustomBooster.java
+END
+LessThanOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/LessThanOperator.java
+END
+BinaryOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/BinaryOperator.java
+END
+CustomBoostFactorsConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/CustomBoostFactorsConfig.java
+END
+EqualsOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/EqualsOperator.java
+END
+ContainsOperator.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/ContainsOperator.java
+END
+CustomBoostFactor.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/boost/CustomBoostFactor.java
+END

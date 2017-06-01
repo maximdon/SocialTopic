@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<proximityConfig>
+
+		<sourceGroup name = "SoftlibTerms">
+			<source name = "SoftLibTerms"/>
+			<source name = "HtmlAbbreviations"/>
+			<source name = "UrlTokens"/>
+			<source name = "SlashParser"/>
+      <source name = "English Words"/>
+		</sourceGroup>
+		
+		<sourceGroup name = "NLP">
+			<source name = "NLP NNP Tokens"/>
+			<source name = "NLP NNP Tokens Single Split"/>
+			<source name = "NLP NNP Tokens Wordnet Split"/>
+      <source name = "Non English Words"/>
+    </sourceGroup>
+
+		<sourceGroup name = "NLP Split">
+			<source name = "NLP NNP Tokens Split"/>
+		</sourceGroup>
+		
+		<sourceGroup name = "NLP Versions">
+			<source name = "NLP Version Tokens"/>
+		</sourceGroup>
+		
+		<sourceGroup name = "External High Important">
+			<source name = "External High Important"/>
+		</sourceGroup>
+		
+		<sourceGroup name = "External Low Important">
+			<source name = "External Low Important"/>
+		</sourceGroup>
+		
+		<rule name = "Softlib - Softlib" 
+			  proxSrcName = "Prox SoftLib-SoftLib"
+			  term1SourceGroup = "SoftlibTerms"
+			  term2SourceGroup = "SoftlibTerms"  
+			  maxWordGapSize = "2"/>
+	
+		<rule name = "Softlib - NLP NNP Tokens Split" 
+			  proxSrcName = "Prox SoftLib-NLP Split"  
+			  term1SourceGroup = "SoftlibTerms"
+			  term2SourceGroup = "NLP Split"  
+			  maxWordGapSize = "2"/>
+
+		<rule name = "Softlib - NLP" 
+			  proxSrcName = "Prox SoftLib-NLP"  
+			  term1SourceGroup = "SoftlibTerms"
+			  term2SourceGroup = "NLP"  
+			  maxWordGapSize = "2"/>
+
+		<rule name = "Softlib - NLP Version" 
+			  proxSrcName = "Prox SoftLib-Version"  
+			  term1SourceGroup = "SoftlibTerms"
+			  term2SourceGroup = "NLP Versions"  
+			  maxWordGapSize = "2"/>
+
+		<rule name = "NLP - NLP" 
+			  proxSrcName = "Prox NLP-NLP"  
+			  term1SourceGroup = "NLP"
+			  term2SourceGroup = "NLP"  
+			  maxWordGapSize = "2"/>
+		
+		<rule name = "NLP - High Importance External" 
+			  proxSrcName = "Prox NLP-High External"  
+			  term1SourceGroup = "External High Important"
+			  term2SourceGroup = "NLP"  
+			  maxWordGapSize = "2"/> 
+
+		<rule name = "NLP Split - High Importance External" 
+			  proxSrcName = "Prox NLP-High External"  
+			  term1SourceGroup = "External High Important"
+			  term2SourceGroup = "NLP Split"  
+			  maxWordGapSize = "2"/> 
+		
+		<rule name = "Softlib - High Importance External" 
+			  proxSrcName = "Prox SoftLib-SoftLib"  
+			  term1SourceGroup = "External High Important"
+			  term2SourceGroup = "SoftlibTerms"  
+			  maxWordGapSize = "2"/> 
+		
+		<rule name = "NLP - Low Importance External" 
+			  proxSrcName = "Prox NLP-Low External"  
+			  term1SourceGroup = "External Low Important"
+			  term2SourceGroup = "NLP"  
+			  maxWordGapSize = "2"/>
+		
+		<wordGroup source="External Low Important">
+			<word>error</word> 
+			<word>issue</word> 
+			<word>problem</word> 
+			<word>exception</word>
+			<word>failure</word>
+			<word>fail</word>
+			<word>warning</word>
+		</wordGroup>   
+		<wordGroup source="External High Important">
+			<word>copy</word> 
+			<word>move</word> 
+			<word>replace</word> 		
+			<word>start</word> 
+			<word>generate</word> 
+			<word>create</word>
+			<word>fix</word>
+			<word>change</word>
+			<word>update</word>
+			<word>mouse</word>
+			<word>click</word>
+			<word>install</word>
+			<word>write</word>
+			<word>recover</word>
+		</wordGroup>
+</proximityConfig>

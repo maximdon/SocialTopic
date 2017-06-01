@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<patternsConfig>
+
+ 		<pattern name="Upgrade From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="upgrade,migrate"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Downgrade From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="downgrade"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Export From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="export"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+ 		</pattern>
+ 
+ 		<pattern name="Import From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="import"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="Versions,NLP Version Tokens,errorCodes"/>
+			</part>
+ 		</pattern>
+ 
+ 		<pattern name="Change From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="change"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Transfer From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="transfer"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Move From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="move"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Switch From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="switch"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Convert From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="convert"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Rename From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="rename"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Extract From-To" source="Patterns5" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="extract"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Jump From-To" source="Patterns4" subjectEmptySplit="true" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="jump"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+ 		</pattern>
+
+ 		<pattern name="Disconnect From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="disconnect"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Remove From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="remove"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Delete From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="delete"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Download From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="download"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Read From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="read"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Upload From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="upload"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Uninstall From" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="uninstall"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Get From" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="get"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Cut From" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="cut"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Receive From" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="receive"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+ 		<pattern name="Protect From" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="protect"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="from"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Exchange And" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="exchange"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="and"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+		
+    	<pattern name="Add To" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="add"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Write To" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="write"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+
+   		<pattern name="Copy To" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="copy"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to,into"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+		
+		<pattern name="Pass To" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="pass"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+ 		<pattern name="Put To" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="put"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to,into"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+ 		<pattern name="Insert To" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="insert"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to,into"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+ 		<pattern name="Send To" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="send"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+		<pattern name="Migrate To" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="migrate"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="to"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+		
+		<pattern name="Install On" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="install,apply"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+		
+   		<pattern name="Run On" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="run"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Open On" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="open"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Use On" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="use"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Create On" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="create"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Apply On" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="apply"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Replace With" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="replace"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="with"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Update With" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="update"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="with"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Replace By" source="Patterns5" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="replace"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="by"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Fix In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="fix"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Use In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="use"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Search In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="search"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Find In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="find"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Create In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="create"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+ 
+   		<pattern name="Open In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="open"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in,into"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Solve In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="solve"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Dispaly In" source="Patterns4" subjectEmptySplit="false" subjectCanBeBehind="true" >
+			<part isSubject="true">
+				<anchor term="display"/>
+				<predicate/>
+			</part>
+			<part>
+				<anchor term="in,on"/>
+				<predicate sources="SoftLibTerms" allow="false"/>
+			</part>
+		</pattern>
+
+   		<pattern name="Is Too" source="Patterns5" maxWordsInPart="2">
+			<part isPreSubject="true">
+				<anchor term="is,was,were"/>
+				<predicate/>
+			</part>
+			<part isSubject="true">
+				<anchor term="too"/>
+				<predicate sources="" allow="false" words="short,long,old,large,small,big"/>
+			</part>
+		</pattern>
+
+</patternsConfig>

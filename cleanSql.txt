@@ -1,0 +1,32 @@
+select * FROM dictionary_terms where term_text in ('a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also','although','always','am','among', 'amongst', 'amoungst', 'amount',  'an', 'and', 'another', 'any','anyhow','anyone','anything','anyway', 'anywhere', 'are', 'around', 'as',  'at', 
+								   'back','be','became', 'because','become','becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom','but', 'by', 
+								   'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 
+								   'de', 'describe', 'do', 'done', 'down', 'due', 'during', 
+								   'each', 'eg', 'eight', 'either', 'else', 'elsewhere', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 
+								   'for', 'from', 'get', 
+								   'give', 'go', 
+								   'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 
+								   'i', 'i.e.', 'if', 'in', 'inc', 'indeed', 'into', 'is', 'it', 'its', 'itself', 
+								   'latter', 'latterly', 'least', 'ltd',
+								   'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'much', 'must', 'my', 'myself',
+								   'namely', 'neither', 'never', 'nevertheless', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere',
+								   'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 
+								   'per', 'perhaps', 'please', 'put', 
+								   'rather', 're', 
+								   'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 
+								   'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'this', 'those', 'though', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 
+								   'un', 'under', 'until', 'up', 'upon', 'us', 
+								   'very', 'via', 
+								   'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 
+								   'yet', 'you', 'your', 'yours', 'yourself', 'yourselves')
+delete from dictionary_terms where term_id in ('15865',
+'17638','17792','18549','24146','27948','29496','30995','31098','31694','32008','32794','32964','33901','34320','34335','34416','34801','34859','35767',
+'36342','36431','38016','40439','40611')
+
+select term_id, term_text, abs(term_text) abs from dictionary_terms where abs(term_text) > 0 and term_source_id = 7 and not term_text like '%.%'
+
+update dictionary_terms set term_text=replace(term_text,')','') where term_text like '%)%' and term_source_id > 2
+
+select term_id from dictionary_terms where term_text like '%>%' and term_source_id > 2
+select term_id from dictionary_terms where term_text like '%dear%' 
+SELECT term_id FROM dictionary_terms where (term_text like '%richard%' or  term_text like '%adeeb%' or term_text like '%yossi%' or term_text like '%ian%' or term_text like '%boaz%' or term_text like '%costi%' or term_text like '%itamar%'  or term_text like '%dror%' or term_text like '%tzahi%' or term_text like '%gadi%' or term_text like '%sami%' or term_text like '%mandel%') and term_source_id > 2

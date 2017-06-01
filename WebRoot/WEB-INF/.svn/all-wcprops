@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/iMatch/!svn/ver/1985/branches/iMatch%20for%20VA/WebRoot/WEB-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/WEB-INF/faces-config.xml
+END
+onload-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/iMatch/!svn/ver/1998/branches/iMatch%20for%20VA/WebRoot/WEB-INF/onload-config.xml
+END
+imatch.taglib.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/WEB-INF/imatch.taglib.xml
+END
+FOLDOC.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/WEB-INF/FOLDOC.txt
+END
+dwr.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/WEB-INF/dwr.xml
+END
+Wikipedia.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/WEB-INF/Wikipedia.txt
+END
+.faces-config.mex
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/WEB-INF/.faces-config.mex
+END
+server.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/WEB-INF/server.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/iMatch/!svn/ver/1998/branches/iMatch%20for%20VA/WebRoot/WEB-INF/web.xml
+END

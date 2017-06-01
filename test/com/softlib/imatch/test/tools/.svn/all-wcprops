@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/iMatch/!svn/ver/1978/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools
+END
+TermsByPositionsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/TermsByPositionsTest.java
+END
+ExtractProximityTermsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/ExtractProximityTermsTest.java
+END
+ExtractTechPatternTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/ExtractTechPatternTest.java
+END
+HighlightTextTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/HighlightTextTest.java
+END
+ExtractDensityTermsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/ExtractDensityTermsTest.java
+END
+LuceneTicketsRepositoryTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/LuceneTicketsRepositoryTest.java
+END
+TechTokensParserTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1978/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/TechTokensParserTest.java
+END
+TechTokensParserTest2.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/TechTokensParserTest2.java
+END
+IndexerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/test/com/softlib/imatch/test/tools/IndexerTest.java
+END

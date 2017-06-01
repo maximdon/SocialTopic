@@ -1,0 +1,4 @@
+path C:\j2sdk1.4.2_06\bin
+go to the folder where the resource file is located
+original file "MessageBundle_iw.properties_pre_encoded" is in UTF8
+native2ascii -encoding UTF8 MessageBundle_iw.properties_pre_encoded MessageBundle_iw.properties

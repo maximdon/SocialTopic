@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/German
+END
+sentenceModel.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/German/sentenceModel.bin.gz
+END
+posModel.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/German/posModel.bin.gz
+END
+tokenModel.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/German/tokenModel.bin.gz
+END

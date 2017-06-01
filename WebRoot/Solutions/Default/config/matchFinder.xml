@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<matchFinder minNumberOfTerms="5" reportFormat="HTML" reportDestPath="C:\work\.metadata\.me_tcat\webapps\iMatch\">
+	<uniquesReport enabled="true" numSamplesInReport="3" maxCandidateScore="0.3" sortOrder="SCORE">
+	</uniquesReport>
+	<duplicatesReport enabled="true" numSamplesInReport="5" minCandidateScore="0.7" generateCompleteGroup="true" sortOrder="SCORE">
+	</duplicatesReport>   
+</matchFinder>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/Solutions/MobileEyeSite/config
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/Solutions/MobileEyeSite/config/log4j.xml
+END
+matcher.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/Solutions/MobileEyeSite/config/matcher.xml
+END
+log4j-console.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1980/branches/iMatch%20for%20VA/WebRoot/Solutions/MobileEyeSite/config/log4j-console.xml
+END

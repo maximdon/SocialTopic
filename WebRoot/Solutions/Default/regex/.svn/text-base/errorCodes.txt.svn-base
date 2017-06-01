@@ -1,0 +1,7 @@
+<!-- Error Codes -->
+<!-- Error Codes In the middle of line -->
+MATCH $$$  $$$ (?<=[\s\(\{\[\"\'])[$%#^&]?([A-Za-z]+?[0-9]*?)[$%\-#^&]+[0-9]+(?=[\:\s\)\}\]\"\']|[.,]\s)
+<!-- Error Codes In the begging of line -->
+MATCH $$$  $$$ ^[$%#^&]?[A-Za-z]+[0-9]*[$%\-#^&]+[0-9]+(?=[\:\s\)\}\]\"\']|[.,]\s)
+<!--Error Codes In the end of line -->
+MATCH $$$  $$$ (?<=[\s\(\{\[\"\'])[$%#^&]?([A-Za-z]+?[0-9]*?)[$%\-#^&]+[0-9]+$

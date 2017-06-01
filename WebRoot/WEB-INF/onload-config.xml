@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<onload-config xmlns="urn:onload-config"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:onload-config onload-config.xsd">
+  
+  <navigation-rule>
+    <view-id>/pages/detailsView.xhtml</view-id>
+    <action>#{detailsViewBean.onLoad}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/index.xhtml</view-id>
+    <action>#{searchBean.onLoad}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/dictManagement.xhtml</view-id>
+    <action>#{dictionaryManagementBean.initRequest}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/loadTerms.xhtml</view-id>
+    <action>#{dictionaryManagementBean.loadTerms}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/loadSynonyms.xhtml</view-id>
+    <action>#{dictionaryManagementBean.loadSynonyms}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/loadSources.xhtml</view-id>
+    <action>#{dictionaryManagementBean.loadSources}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/editTerm.xhtml</view-id>
+    <action>#{dictionaryManagementBean.editTerm}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/editSource.xhtml</view-id>
+    <action>#{dictionaryManagementBean.editSource}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/editSynonym.xhtml</view-id>
+    <action>#{dictionaryManagementBean.editSynonym}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/searchSynonym.xhtml</view-id>
+    <action>#{dictionaryManagementBean.searchSynonym}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/pages/tracker.xhtml</view-id>
+    <action>#{searchBean.tracker}</action>
+  </navigation-rule>
+  <navigation-rule>
+    <view-id>/logout.xhtml</view-id>
+    <action>#{userBean.logout}</action>
+  </navigation-rule>
+</onload-config>

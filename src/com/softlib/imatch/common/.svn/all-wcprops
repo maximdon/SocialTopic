@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/iMatch/!svn/ver/2019/branches/iMatch%20for%20VA/src/com/softlib/imatch/common
+END
+ITokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ITokenizer.java
+END
+LogUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/iMatch/!svn/ver/2019/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/LogUtils.java
+END
+ReadWriteLockWithTimer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/iMatch/!svn/ver/2103/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ReadWriteLockWithTimer.java
+END
+PerformanceTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/PerformanceTracker.java
+END
+SourceMngr.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SourceMngr.java
+END
+TrackingInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/TrackingInfo.java
+END
+SimpleTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SimpleTokenizer.java
+END
+ProximityDelimeterAwareTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ProximityDelimeterAwareTokenizer.java
+END
+Base64Utils.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/Base64Utils.java
+END
+SubListCombinations.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SubListCombinations.java
+END
+HighlightText.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/HighlightText.java
+END
+StringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/2055/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/StringUtils.java
+END
+SubTightListCombinations.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SubTightListCombinations.java
+END
+HibernateUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/HibernateUtils.java
+END
+AzureLogAppender.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/iMatch/!svn/ver/2019/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/AzureLogAppender.java
+END
+QueueThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/QueueThread.java
+END
+XMLUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/XMLUtils.java
+END
+Pair.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/Pair.java
+END
+MimeUtility.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/MimeUtility.java
+END
+ReadWriteLockMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ReadWriteLockMode.java
+END
+SimpleCommaTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SimpleCommaTokenizer.java
+END
+TicketTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1977/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/TicketTracker.java
+END
+CreateTextFileProcess.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/CreateTextFileProcess.java
+END
+TracerFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/TracerFile.java
+END
+SentencesHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SentencesHistory.java
+END
+BeanUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/BeanUtils.java
+END
+CharTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/CharTokenizer.java
+END
+ObjectPerListCombinations.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ObjectPerListCombinations.java
+END
+TracerFileLast.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/2044/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/TracerFileLast.java
+END
+PerformanceTrackerRoutine.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/PerformanceTrackerRoutine.java
+END
+ScriptRunner.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ScriptRunner.java
+END
+SQLiteDialect.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SQLiteDialect.java
+END
+SessionMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/SessionMode.java
+END
+TextPosition.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/TextPosition.java
+END
+FileUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/FileUtils.java
+END
+ReadWriteLock.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/ReadWriteLock.java
+END

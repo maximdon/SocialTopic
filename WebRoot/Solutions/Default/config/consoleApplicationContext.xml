@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- Indexer section -->
+	<bean id="ticketsRepository" class="com.softlib.imatch.matcher.lucene.LuceneTicketsRepository">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+	<!-- Indexer -->
+	<bean id="indexerFactory" class="com.softlib.tools.fullindex.IndexerFactory">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	</bean>
+		
+	<!-- Dictionary Builder -->
+	<bean id="dictionaryBuilderFactory" class="com.softlib.tools.dictionaryparsers.DictionaryBuilderFactory">
+		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+		<property name="extractParsers">
+			<list>
+				<ref bean="techTokensParser"/> 
+			</list>
+		</property>
+		<property name="postExtractParsers">
+			<list>
+				<ref bean="frequencyParser"/> 
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="Wikipedia" class="com.softlib.tools.dictionaryparsers.WikipediaParser"/>
+	<bean id="techTokensParser" class="com.softlib.tools.dictionaryparsers.TechTokensParser" lazy-init="true">
+		<constructor-arg index="0" value="2"/>
+		<constructor-arg index="1" value="1000000"/>
+		<constructor-arg index="2" value="0"/>
+		<constructor-arg index="3" value="0.9"/>
+		<constructor-arg index="4" value="true"/>
+		<constructor-arg index="5" value="2"/>
+		<property name="relationAlgorithms">
+			<list>
+				<ref bean="generalDelimitersRelationAlgorithm"/> 
+				<ref bean="acronymRelationAlgorithm"/> 
+				<ref bean="vendorRelationAlgorithm"/> 
+				<ref bean="versionRelationAlgorithm"/> 
+				<ref bean="knownSynonymsRelationAlgorithm"/> 
+				<ref bean="phoneticRelationAlgorithm"/>
+				<ref bean="negativeSentimentRelationAlgorithm"/> 
+			</list>
+		</property>
+		<property name="steps">
+			<list>
+				<ref bean="versionsStep"/>
+				<ref bean="extractPersonNameByNLP"/>				
+				<ref bean="cleanStep"/>
+				<ref bean="errorCodesStep"/>
+				<ref bean="errorCodesGenericStep"/>
+				<ref bean="functionNamesStep"/>
+				<ref bean="dashedTermsStep"/>
+				<ref bean="underscoreStep"/> 
+				<ref bean="longTermsStep"/>
+				<ref bean="quoteTermsStep"/>
+				<ref bean="htmlAbbreviationsStep"/>
+				<ref bean="urlParserStep"/>
+				<ref bean="extractTechTokensByNLP"/>				
+				<ref bean="extractNonEnglishWords"/>				
+				<ref bean="extractVersionsByNLP"/>
+				<ref bean="negativeSentimentStep"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="phoneticRelationAlgorithm" class="com.softlib.imatch.relations.PhoneticAlgorithm">
+		<constructor-arg index="0" value="6"/>
+		<constructor-arg index="1" value="8"/>
+		<constructor-arg index="2" value="0.7"/>
+		<constructor-arg index="3" value="0.6"/>
+	</bean>	
+	<bean id="acronymRelationAlgorithm" class="com.softlib.imatch.relations.AcronymAlgorithm">
+		<property name="acronymSources">
+			<list>
+				<value>7</value>
+				<value>27</value>
+			</list>
+		</property>
+	</bean>	
+	<bean id="generalDelimitersRelationAlgorithm" class="com.softlib.imatch.relations.GeneralDelimitersAlgorithm">
+	</bean>	
+	<bean id="knownSynonymsRelationAlgorithm" class="com.softlib.imatch.relations.KnownSynonymsAlgorithm">
+	</bean>	
+	<bean id="vendorRelationAlgorithm" class="com.softlib.imatch.relations.VendorAlgorithm">
+	</bean>	
+	<bean id="versionRelationAlgorithm" class="com.softlib.imatch.relations.VersionAlgorithm">
+	</bean>	
+	<bean id="negativeSentimentRelationAlgorithm" class="com.softlib.imatch.relations.NegativeSentimentAlgorithm">
+	</bean>	
+	
+	<bean id="frequencyParser" class="com.softlib.tools.dictionaryparsers.TechTokensParser" lazy-init="true">
+		<constructor-arg index="0" value="2"/>
+		<constructor-arg index="1" value="1000000"/>
+		<constructor-arg index="2" value="0"/>
+		<constructor-arg index="3" value="0.9"/>
+		<constructor-arg index="4" value="true"/>
+		<constructor-arg index="5" value="2"/>
+		<property name="steps">
+			<list>
+				<ref bean="cleanStep"/>
+				<ref bean="extractPPbyNLP"/>	
+				<ref bean="extractADJPbyNLP"/>
+				<ref bean="extractADVPbyNLP"/>
+				<ref bean="extractTechPatternByNLP"/>
+				<ref bean="extractProximityTermsByNLP"/>
+				<ref bean="FrequencyStep"/>
+			</list>
+		</property>
+		<property name="relationAlgorithms">
+			<list>
+				<ref bean="generalDelimitersRelationAlgorithm"/> 
+				<ref bean="acronymRelationAlgorithm"/> 
+				<ref bean="vendorRelationAlgorithm"/> 
+				<ref bean="versionRelationAlgorithm"/> 
+				<ref bean="knownSynonymsRelationAlgorithm"/> 
+				<ref bean="phoneticRelationAlgorithm"/>
+				<ref bean="negativeSentimentRelationAlgorithm"/> 
+			</list>
+		</property>
+	</bean>
+	<bean id="nlp" class="com.softlib.imatch.nlp.NLP"/>
+	<bean id="FrequencyStep" class="com.softlib.imatch.ticketprocessing.FrequencyTerms" /> 
+	<bean id="extractNonEnglishWords" class="com.softlib.imatch.ticketprocessing.ExtractNonEnglishWords" lazy-init="true"/>
+	<bean id="htmlAbbreviationsStep" class="com.softlib.imatch.ticketprocessing.HtmlAbbreviationsStep" lazy-init="true"/>
+	<bean id="urlParserStep" class="com.softlib.imatch.ticketprocessing.UrlParserStep" lazy-init="true"/>
+	<bean id="extractTechTokensByNLP" class="com.softlib.imatch.ticketprocessing.ExtractTechTokensByNLP" lazy-init="true"/>
+	<bean id="extractPersonNameByNLP" class="com.softlib.imatch.ticketprocessing.ExtractPersonNameByNLP" lazy-init="true"/>
+	<bean id="extractTechPatternByNLP" class="com.softlib.imatch.ticketprocessing.ExtractTechPatternByNLP" lazy-init="true"/>
+	<bean id="extractProximityTermsByNLP" class="com.softlib.imatch.ticketprocessing.ExtractProximityTermsByNLP" lazy-init="true"/>
+	<bean id="extractVersionsByNLP" class="com.softlib.imatch.ticketprocessing.ExtractVersionsByNLP" lazy-init="true"/>
+	<bean id="extractADJPbyNLP" class="com.softlib.imatch.ticketprocessing.ExtractADJPbyNLP" lazy-init="true"/>
+	<bean id="extractADVPbyNLP" class="com.softlib.imatch.ticketprocessing.ExtractADVPbyNLP" lazy-init="true"/>
+	<bean id="extractPPbyNLP" class="com.softlib.imatch.ticketprocessing.ExtractPPbyNLP" lazy-init="true"/>
+	
+	<bean id="errorCodesStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="errorCodes"></constructor-arg>
+	</bean>			
+	<bean id="errorCodesGenericStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="errorCodesGeneric"></constructor-arg>
+	</bean>	
+	<bean id="underscoreStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="underscoreTerms"></constructor-arg>
+	</bean>
+	<bean id="dashedTermsStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="dashedTerms"></constructor-arg>
+	</bean>
+	<bean id="versionsStep" class="com.softlib.imatch.ticketprocessing.VersionsTechToknes" />
+	<bean id="functionNamesStep" class="com.softlib.imatch.ticketprocessing.TechTokens">
+		<constructor-arg value="functionNames"></constructor-arg>
+	</bean>
+	<bean id="longTermsStep" class="com.softlib.imatch.ticketprocessing.LongTermsTechTokens"/>
+	
+	<!-- Solution implementation section -->
+	<bean id="AdvanNet_ServiceDesk_StatementAnalyzer" class="com.softlib.imatch.test.dbintegration.AdvanNetServiceDeskStatementAnalyzer">
+	</bean>
+</beans>

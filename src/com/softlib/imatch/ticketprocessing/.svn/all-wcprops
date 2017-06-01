@@ -1,0 +1,329 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/2032/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing
+END
+RegexFileStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/RegexFileStep.java
+END
+TechTokenPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/TechTokenPattern.java
+END
+FrequencyTerms.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1997/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/FrequencyTerms.java
+END
+IScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/2032/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/IScoreCalculator.java
+END
+RangeTfIdfFormulaScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/RangeTfIdfFormulaScoreCalculator.java
+END
+ExtractTechTokensByNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/2057/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractTechTokensByNLP.java
+END
+Clean.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/iMatch/!svn/ver/2057/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/Clean.java
+END
+SlashParserStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/2057/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/SlashParserStep.java
+END
+TicketProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/TicketProcessor.java
+END
+NegativeSentimentStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/2037/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/NegativeSentimentStep.java
+END
+HtmlAbbreviationsStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/2057/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/HtmlAbbreviationsStep.java
+END
+ProcessedTicketWrite.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ProcessedTicketWrite.java
+END
+ExtractNonEnglishWords.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractNonEnglishWords.java
+END
+MatchRegexOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/iMatch/!svn/ver/2064/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/MatchRegexOperation.java
+END
+StepContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/StepContext.java
+END
+RematchScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/2032/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/RematchScoreCalculator.java
+END
+ProcessedTicketWritter.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ProcessedTicketWritter.java
+END
+RegexOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/RegexOperation.java
+END
+ExtractVersionsByNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractVersionsByNLP.java
+END
+BaseTicketProcessStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/2064/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/BaseTicketProcessStep.java
+END
+VersionsTechToknes.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/1977/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/VersionsTechToknes.java
+END
+ExtractADVPbyNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractADVPbyNLP.java
+END
+ITicketProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ITicketProcessor.java
+END
+ISolveQueryAsTermStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ISolveQueryAsTermStep.java
+END
+TechTokenPhrase.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/2057/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/TechTokenPhrase.java
+END
+ProcessedTicketDBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ProcessedTicketDBase.java
+END
+UrlParserStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/iMatch/!svn/ver/2083/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/UrlParserStep.java
+END
+CommonMisspellingsStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/1977/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/CommonMisspellingsStep.java
+END
+ExtractADJPbyNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractADJPbyNLP.java
+END
+TechTokens.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/1982/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/TechTokens.java
+END
+NlpBaseTicketProcessStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/iMatch/!svn/ver/2037/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/NlpBaseTicketProcessStep.java
+END
+ProcessedField.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ProcessedField.java
+END
+DictionaryTermsMerge.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/DictionaryTermsMerge.java
+END
+ITicketProcessStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ITicketProcessStep.java
+END
+ITicketMatchAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/iMatch/!svn/ver/2032/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ITicketMatchAction.java
+END
+LuceneTfIdfFormulaScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/LuceneTfIdfFormulaScoreCalculator.java
+END
+ExtractTechPatternByNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractTechPatternByNLP.java
+END
+BaseMeaningExtractionStep.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/iMatch/!svn/ver/2037/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/BaseMeaningExtractionStep.java
+END
+TitleScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/iMatch/!svn/ver/2032/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/TitleScoreCalculator.java
+END
+LongTermsTechTokens.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/iMatch/!svn/ver/1982/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/LongTermsTechTokens.java
+END
+ExtractDensityTermsByNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractDensityTermsByNLP.java
+END
+NegativeSentimentsConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/NegativeSentimentsConfig.java
+END
+ExtractPersonNameByNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/2049/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractPersonNameByNLP.java
+END
+ExtractPPbyNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractPPbyNLP.java
+END
+NegativeSentiment.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/NegativeSentiment.java
+END
+ProcessedTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/2087/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ProcessedTicket.java
+END
+IDocFreqProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/IDocFreqProvider.java
+END
+POVServiceScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/POVServiceScoreCalculator.java
+END
+IndexTerms.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/iMatch/!svn/ver/2057/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/IndexTerms.java
+END
+ScoreCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/2032/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ScoreCalculator.java
+END
+ReplaceRegexOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/iMatch/!svn/ver/2064/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ReplaceRegexOperation.java
+END
+ExtractProximityTermsByNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/ExtractProximityTermsByNLP.java
+END
+IProcessedTicket.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/iMatch/!svn/ver/2010/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/IProcessedTicket.java
+END
+DictionaryTerms.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/iMatch/!svn/ver/1997/branches/iMatch%20for%20VA/src/com/softlib/imatch/ticketprocessing/DictionaryTerms.java
+END

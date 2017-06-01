@@ -1,0 +1,2 @@
+<!-- All words with - inside  -->
+MATCH $$$  $$$ \b[A-Za-z0-9_-]+?[-][A-Za-z0-9_-]+\b

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sourceBoostConfig>
+
+		<rule sourceName = "errorCodesGeneric" 
+ 			  otherSource = "*" 
+			  addBoost =  "1.0"/>
+		
+		<rule sourceName = "NLP NNP Tokens" 
+ 			  otherSource = "quoteTerms" 
+			  addBoost =  "1.0"/>
+
+		<rule sourceName = "NLP NNP Tokens Split" 
+ 			  otherSource = "longTerms" 
+			  addBoost =  "1.0"/>
+
+		<rule sourceName = "NLP Version Tokens Split" 
+ 			  otherSource = "longTerms" 
+			  addBoost =  "0.5"/>
+	
+		<rule sourceName = "NLP NNP Tokens" 
+ 			  otherSource = "variables" 
+			  addBoost =  "1.0"/>
+
+		<rule sourceName = "NLP Version Tokens Split" 
+ 			  otherSource = "longTerms" 
+			  addBoost =  "0.5"/>
+			  
+		<rule sourceName = "variables" 
+ 			  otherSource = "*"
+ 			  text = "_" 
+ 			  includeText = "false" 
+			  addBoost =  "-1.0"/>
+		
+</sourceBoostConfig>

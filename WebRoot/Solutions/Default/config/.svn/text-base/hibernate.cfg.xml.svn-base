@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<mapping class="com.softlib.imatch.ServerState" />
+	<mapping
+		class="com.softlib.imatch.common.trackinginfo.MatchAcknowledgedTrackingInfo" />
+	<mapping
+		class="com.softlib.imatch.common.trackinginfo.GlobalMatchFeedbackTrackingInfo" />
+	<mapping
+		class="com.softlib.imatch.common.trackinginfo.MatchFinishedTrackingInfo" />
+	<mapping
+		class="com.softlib.imatch.common.trackinginfo.MatchStartedTrackingInfo" />
+	<mapping
+		class="com.softlib.imatch.dictionary.TechnicalDictionaryTerm" />
+	<mapping
+		class="com.softlib.imatch.dictionary.Vendor" />
+	<mapping
+		class="com.softlib.imatch.dictionary.TechnicalTermRelation" />
+	<mapping class="com.softlib.imatch.dictionary.TechnicalTermSource" />
+	<mapping
+		class="com.softlib.imatch.common.trackinginfo.MatchReviewTrackingInfo" />
+	<mapping
+		class="com.softlib.imatch.model.User" />
+</session-factory>
+</hibernate-configuration>

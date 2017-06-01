@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/customscore
+END
+LuceneWordFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/customscore/LuceneWordFactory.java
+END
+IQueryTester.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/customscore/IQueryTester.java
+END
+CustomScoreLuceneFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/customscore/CustomScoreLuceneFactory.java
+END
+LuceneCustomScoreSearcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/iMatch/!svn/ver/2027/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/customscore/LuceneCustomScoreSearcher.java
+END
+CustomScoreQueryBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/iMatch/!svn/ver/2011/branches/iMatch%20for%20VA/src/com/softlib/imatch/matcher/lucene/customscore/CustomScoreQueryBuilder.java
+END

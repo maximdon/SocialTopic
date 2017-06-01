@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/iMatch/!svn/ver/2101/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/progressnotifier
+END
+IProgressNotifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/iMatch/!svn/ver/2101/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/progressnotifier/IProgressNotifier.java
+END
+IProgressNotificationListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/iMatch/!svn/ver/2101/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/progressnotifier/IProgressNotificationListener.java
+END
+DefaultProgressNotifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/iMatch/!svn/ver/2110/branches/iMatch%20for%20VA/src/com/softlib/imatch/common/progressnotifier/DefaultProgressNotifier.java
+END

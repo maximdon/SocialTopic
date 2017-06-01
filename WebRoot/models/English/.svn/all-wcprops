@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/English
+END
+tagdict.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/English/tagdict.txt
+END
+EnglishSD.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/English/EnglishSD.bin.gz
+END
+EnglishTok.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/English/EnglishTok.bin.gz
+END
+EnglishChunk.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/English/EnglishChunk.bin.gz
+END
+tag.bin.gz
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/iMatch/!svn/ver/1965/branches/iMatch%20for%20VA/WebRoot/models/English/tag.bin.gz
+END

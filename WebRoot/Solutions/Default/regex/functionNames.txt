@@ -1,0 +1,4 @@
+<!-- Find words with Capital letter inside. good for finding function names like getWork() etc --> 
+MATCH $$$  $$$ \b[a-z0-9][A-Za-z0-9\-_\.]*[A-Z]([A-Za-z0-9\-_\.]*)\b	
+<!-- Find words with first capital letter and another capital letter inside. good for finding class names like NonStop etc --> 
+MATCH $$$  $$$ \b[A-Z][A-Za-z0-9\-_\.]*[a-z]+[A-Z]+([A-Za-z0-9\-_\.]*)\b

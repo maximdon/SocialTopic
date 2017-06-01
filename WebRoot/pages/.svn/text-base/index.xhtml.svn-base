@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:jawr="https://jawr.dev.java.net/jsf/facelets">
+	
+	<f:view contentType="text/html">
+		<head>
+			<title>iMatch by Softlib</title>
+			<link rel="shortcut icon" href="../favicon.ico"></link>
+			
+			<script type="text/javascript">
+				var iMatchNS = new Object();
+				var iMatch = new Object();
+				var idsDelimiter = "-A-";
+			</script>
+							
+			<jawr:style src="/bundles/all.css" />
+		    <jawr:script src="/bundles/lib.js" useRandomParam="false" />
+		    <jawr:script src="/bundles/iMatch.js" />
+		    <jawr:script src="/bundles/dwrall.js"/>
+		    <jawr:script src="/bundles/jqGrid.js"/>
+			<jawr:script src="/bundles/autocomplete.js"/>
+			<jawr:script src="/js/jQueryTools/jquery.tools.min.js" />
+			
+			<script type="text/javascript">
+				var sliderHeight = "54px";
+				var iMatchSettings = {};
+				var myLayout;
+				
+				try {
+					iMatchSettings.userLevel = '#{userBean.user.userLevel.value}';
+					iMatchSettings.hideLowRankItems = #{not empty initParam['hideLowRankItems']} ? "#{initParam['hideLowRankItems']}".bool() : true;
+					iMatchSettings.autoPreviewFirstCandidate = #{not empty initParam['autoPreviewFirstCandidate']} ? "#{initParam['autoPreviewFirstCandidate']}".bool() : true;
+				} catch (e) {
+					// TODO: handle exception
+				}
+				
+				function init()
+				{
+					var layoutDimentions = {contentWest: 250, contentEast: 450 };
+					useLoadingImage('images/loading/activityanimation.gif');
+					dwr.engine.setErrorHandler(errorHandler);
+					jQuery("#searchTicketID").Watermark("Please enter a ticket id");
+					
+					
+					layoutDimentions.contentEast = jQuery(document).width() / 2;
+					
+					myLayout = jQuery('body').layout({ 
+						defaults: { applyDefaultStyles: false, closable: false, resizable: false },
+						north: { paneSelector: "#headerContent", spacing_open: 0, size: "72" },
+						center: { paneSelector: "#mainContent",	onresize: function() {
+								innerLayout.resizeAll();
+							}
+						}
+					});
+					
+					innerLayout = jQuery('div.ui-layout-pane-center').layout({ 
+						defaults: {applyDefaultStyles: false, closable: true, resizable: true},
+						south: { paneSelector: ".content-south", togglerTip_open: "Close Match Results", togglerTip_closed: "Open Match Results", size: "300", onresize: function() {
+								containerContentPane.resizeAll();
+								//resizeMatchReview();
+								globalResize();
+							}
+						},
+						center: { paneSelector: ".content-center", onresize: function() {
+								containerContentPane.resizeAll();
+								//resizeMatchReview();
+								globalResize();
+							}
+						}
+					});
+						
+					containerContentPane = jQuery('#ViewPane').layout({ 
+						defaults: {applyDefaultStyles: false, closable: true, resizable: true, initClosed: true},
+						west: { paneSelector: ".contentWest", togglerTip_open: "Close Rematch Control Panel", togglerTip_closed: "Open Rematch Control Panel", size: "250", onresize: function() {
+								//resizeMatchReview();
+								globalResize();
+							},
+							onopen_end: function() {
+								//resizeMatchReview();
+								globalResize();
+							},
+							onclose_end: function() {
+								//resizeMatchReview();
+								globalResize();
+							}
+						},
+						center: {paneSelector: ".contentCenter"},
+						east: {paneSelector: ".contentEast", togglerTip_open: "Close Preview Panel", togglerTip_closed: "Open Preview Panel", size: layoutDimentions.contentEast, initClosed: true, onresize: function() {
+								//resizeMatchReview();
+								globalResize();
+							},
+							onopen_end: function() {
+								//resizeMatchReview();
+								globalResize();
+							},
+							onclose_end: function() {
+								//resizeMatchReview();
+								globalResize();
+							}
+						}
+					});
+					
+					//jQuery("#ticketFreeText").Watermark("Please click here to enter a ticket body");
+
+					/*
+					if (jQuery(".feedback").length > 0)
+					{
+						jQuery("#iMatchResults").show();
+						jQuery("#iMatchNoResults").hide();
+					}
+					else
+					{
+						jQuery("#iMatchResults").hide();
+
+						if (jQuery('#matchingTicketID').val() != null &amp;&amp; jQuery('#matchingTicketID').val() != "")
+							jQuery("#iMatchNoResults").show();
+					}
+ 
+					jQuery(document).ready(function(){
+					    jQuery('.fulldesc').each(function () {
+					                var current = jQuery(this);
+					                current.attr("box_h", current.height());
+					            }
+					     );
+					 
+					    jQuery(".fulldesc").css("height", sliderHeight);					 
+					});
+					*/
+
+					jQuery("#currentTicketData").click(function(e) {
+						if(e.ctrlKey) { 
+						    
+						} else if(e.altKey) {
+							jQuery("#currentTicketData, #currentTicketTitle, #previewContent, #previewTitle").toggleClass("highlightDebug");
+						} 
+					});
+					
+					jQuery.jGrowl.defaults.position = 'center';
+					
+					jQuery(window).bind('resize', function() {
+						globalResize();
+					});
+					
+					window.onbeforeunload = function() { 
+						return "If you leave, previous match data will be lost.";
+					}
+					
+					if (jQuery("#matchContainer option").size() == 1)
+						jQuery("#matchContainers").hide();
+					else
+						jQuery("#matchContainers").show();
+						
+					iMatch.sourceTabs = new iMatchNS.tabs();
+					iMatch.sourceTabs.initTabs('#tabsSourceTicket');
+					
+					/*
+					jQuery( "#tabsSourceTicket" ).tabs({
+						show: function(event, ui) {
+							resizeTabs("#" + ui.panel.id);	
+						}
+					});
+					*/
+					
+					jQuery("#rematchButton").hover(function () {
+						jQuery(this).toggleClass("bigButtonHover");
+					}, 
+					function () {
+						jQuery(this).toggleClass("bigButtonHover");
+				  	});
+				  	
+					initMatchReview();
+					iMatch.tabs = new iMatchNS.tabs();
+					iMatch.tabs.initTabs('#tabs', true);
+					
+					var ticketID = '#{param.id}';
+					var SoftlibFreeText = "#{param.SoftlibFreeText}";
+					var SoftlibSubject = "#{param.SoftlibSubject}";
+					var subject = "";
+					var body = "";					
+					
+					if (ticketID &amp;&amp; ticketID != '') {
+						jQuery('#searchTicketID').val(ticketID);
+						match(1);
+					}
+					else if (SoftlibFreeText != "")
+					{
+						//if (SoftlibFreeText != "1")
+						//	openFreeTextMatch(false);
+						//else
+							match(2);
+					}
+					
+					//jQuery(".iMatchButton").button();
+					
+					iMatch.menu = new iMatchNS.menu();
+					
+					jQuery("#mainContent").hide();
+				}
+
+				function init2()
+				{
+					
+				}
+			</script>
+		</head>
+		<body onload="init();">
+			<f:view>
+				<ul id="helperSortableTerms" class="ui-sortable" style="position: absolute; z-index: 100;">
+																
+				</ul>
+				<f:loadBundle basename="com.softlib.imatch.resources.MessageBundle" var="bundle"/>
+				
+				<ui:include src="panels.xhtml"/>
+				
+				<div id="headerContent">
+					<div style="height: 100%;">
+						<ui:insert name="header">
+							<ui:include src="header.xhtml" />
+						</ui:insert>
+					</div>
+				</div>
+				<div id="mainContentMsg" style="position: absolute; top: 50%; text-align: center; width: 100%;">
+					<div id="mainContentMessages">
+					
+					</div>
+					<div>
+						<h:messages id="messages" errorClass="errorMessages"></h:messages>
+					</div>
+				</div>
+				<div id="mainContent" style="display: none;">
+					<div class="content-center" id="ViewPane">
+						<div class="contentWest">
+							<div class="paneHeader">
+								<div>
+									<img src="images/rematch_icon.png" title="Rematch Control Panel" style="vertical-align: middle;" />
+									 Rematch Control Panel
+								 </div>
+							</div>
+							<div style="height: 28px;">
+								<table style="width: 100%; border-collapse: collapse; height: 28px;">
+									<tr>
+										<td class="ui-state-default" style="width: 85%;">
+											<input id="rematchNewTerm" type="text" style="width: 95%;"/>		
+										</td>
+										<td class="ui-state-default">
+											<input id="rematchAddNewTermButton" type="button" value="Add" onclick="addNewTermToRematch(jQuery('#rematchNewTerm').val());"/>
+										</td>
+									</tr>
+								</table>
+							</div>
+							
+							<div id="rematchTermsDiv" style="overflow: auto; width: 99%; position: relative; border: 1px solid #DFEFFC;">
+								<ul id="rematchTerms" class="ui-sortable" style="padding: 0px 0px; height: 100%;">
+									
+								</ul>
+							</div>
+							<div style="position: absolute; width: 98%; bottom: 5px; text-align: center;">
+								<img src="images/rematch_button.png" class="iMatchButton" onclick="rematch();" style="cursor: pointer;" />
+							</div>
+						</div>
+						<div class="contentCenter">
+							<div class="paneHeader">
+								<div>
+									<img src="images/source_icon.png" title="Source Ticket" style="vertical-align: middle;" />
+									 Source Ticket
+									 <span style="position: absolute; right: 10px;"> 
+									 	<a href="#" style="font-size: 11px; color: white;" onclick="freeTextEdit();">Edit</a>
+									 	<a href="#" style="font-size: 11px; color: white;" onclick="toggleHighlight(this, '#currentTicketData, #currentTicketTitle');">Unhighlight</a>
+									 </span>
+								 </div>
+							</div>
+							<div id="tabsSourceTicket">
+								<ul>
+									<li><a href="#tabs-sourceTicketView">View</a></li>
+									<li><a href="#tabs-sourceTicketKeywords">Keywords</a></li>
+								</ul>
+								<div id="tabs-sourceTicketView">
+									<div id="currentTicketDetails" style="padding: 5px; font-size: 16px; border-bottom: 1px solid gray;">
+										<table style="width: 100%;" cellpadding="0" cellspacing="0">
+											<tr>
+												<td>
+													<span id="currentTicketID" style="color: #133856; font-size: 14px;"></span> <span id="currentTicketTitle" class="highlight"></span>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div id="currentTicket" style="overflow: auto;">
+										<div id="currentTicketData" style="padding: 5px; color: #133856;" class="highlight">
+											
+										</div>
+									</div>
+								</div>
+								<div id="tabs-sourceTicketKeywords">
+									<div style="padding: 2px;">
+										<div id="extractedTermsDiv" style="overflow: auto; width: 100%; position: relative; border: 1px solid #DFEFFC;">
+											<ul id="extractedTerms" class="ui-sortable" style="height: 100%;">
+												
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="contentEast">
+							<div class="paneHeader">
+								<div>
+									<img src="images/preview_icon.png" title="Preview Panel" style="vertical-align: middle;" />
+								 	 Preview Panel
+								 	<span style="position: absolute; right: 10px;"> 
+								 		<a href="#" onclick="toggleHighlight(this, '#previewContent, #previewTitle');" style="font-size: 11px; color: white;">Unhighlight</a>
+								 	</span>
+								</div>
+							</div>
+							<div class="ui-widget-header" style="height: 28px;">
+								
+							</div>
+							<div style="margin-top: 5px; font-size: 16px; border-bottom: 1px solid gray;">
+								<table style="width: 100%;">
+									<tr>
+										<td id="previewTitle" class="highlight">
+											
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div id="previewContent" style="overflow: auto; padding: 5px; color: #133856;" class="ui-widget highlight">
+								<div class="centerTag">Please select candidate ticket from<br/>the match results pane.</div>
+							</div>	
+						</div>
+					</div>
+					
+					<div class="content-south" id="ResultsPane">
+						<div class="paneHeader">
+							<div>
+								<img src="images/star_icon.png" title="Match Results" style="vertical-align: middle;" />
+								 Match Results
+								<span style="position: absolute; right: 10px;">
+									<a class="MatchFeedbackButton" href="#" style="float: right; font-size: 11px; color: white; cursor: pointer; text-decoration: underline;display: none;">#{bundle.globalMatchFeedbackButton}</a>
+								</span>
+							</div>
+						</div>
+						<div id="matchResultsData" style="padding: 0px;">
+							<div id="tabs">
+								<ul>
+									<li><a href="#tabs-1"> </a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+								</ul>
+								<div id="tabs-1">
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div id="matchResultsMsg" style="display: none; text-align: center; font-size: 14px; position: relative; top: 50%;"></div>
+					</div>
+				</div>
+			</f:view>
+			<iframe ID="KeepAlive" HEIGHT="0" WIDTH="0" FRAMEBORDER="0" SCROLLING="NO" SRC="keepalive.jsf" style="display: none;"></iframe>
+		</body>
+	</f:view>
+</html>
