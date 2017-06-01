@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1496347636971_1" label="Default" name="Default">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/iMatch" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/iMatch" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1495983196573_0" label="Window Working Set" name="Aggregate for window 1495983196572"/>
+<mruList name="Default"/>
+</workingSetManager>
