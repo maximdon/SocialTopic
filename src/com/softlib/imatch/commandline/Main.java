@@ -39,10 +39,8 @@ import com.softlib.imatch.dictionary.Wordnet;
 import com.softlib.imatch.matcher.Matcher;
 import com.softlib.imatch.matcher.SearcherConfiguration;
 import com.softlib.imatch.matcher.lucene.LuceneHighlighter;
-import com.softlib.imatch.scheduler.Scheduler;
 import com.softlib.imatch.ticketprocessing.IProcessedTicket;
 import com.softlib.imatch.ticketprocessing.ProcessedTicketDBase;
-import com.softlib.taxonomytool.engine.Engine;
 import com.softlib.tools.dictionaryparsers.DictionaryBuilder;
 import com.softlib.tools.dictionaryparsers.DictionaryBuilderFactory;
 import com.softlib.tools.dictionaryparsers.ExtractionContext;
@@ -62,7 +60,6 @@ public class Main
 	public static void main(String args[])
 	{
 		Options options = new Options();
-		options.addOption("startScheduler", false, "Runs the iMatch scheduler  as a command line tool");
 		options.addOption("index", true, "Runs one time index based on existing dictionary");
 		options.addOption("builddict", true, "Builds SoftLib technical dictionary from external sources (FOLDOC, Wikipedia, WordNet...)");
 		options.addOption("afterFreq", true, "Update terms after frequency on existing dictionary");
@@ -72,10 +69,7 @@ public class Main
 		options.addOption("printRelations", false, "Print all Terms Relation");
 		options.addOption("fixRelations", false, "Fixes all term relations");
 		options.addOption("findMatches", true, "Tries to find the perfect matches on the corpus");
-		options.addOption("povService", false, "Runs iMatch Sales Tool by running Extract, Index and MatchFinder one after another");
 		options.addOption("verify", false, "runs verifycation set");
-		options.addOption("resetState", true, "resets internal server set to the given index & extract time. The time format is yyyyMMdd");
-		options.addOption("displayDate", true, "Displays number of milliseconds for the givem date in yyyyMMdd format");
 		options.addOption("createIndexTable", false, "Create the index processedticket table");
 		options.addOption("addStemmingException", true, "Adds new pair as a stemming exception");
 		options.addOption("parseGlossary", true, "Parses glossary");
@@ -90,11 +84,6 @@ public class Main
 			System.out.println("Error occured during command line handling, internal error: " + e.getMessage());
 			return;
 		}
-		if(cmd.hasOption("startScheduler")) {
-			System.out.println("Running iMatch scheduler...");
-			Scheduler indexer = new Scheduler(true);
-			indexer.start();
-		}		
 		if(cmd.hasOption("index")) {			
 			System.out.println("Indexing tickets...");
 			try {
@@ -140,7 +129,7 @@ public class Main
 		else if(cmd.hasOption("builddict")) {
 			System.out.println("Building SoftLib dictionary...");
 			try {
-				MultitenantRuntimeInfo.init(null);
+				RuntimeInfo.init(null);
 				DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));
 				try {
 					RuntimeInfo.getCurrentInfo().getBean("_no_name_");
@@ -496,76 +485,7 @@ public class Main
 				LogUtils.info(verifyLog, "%s",e.toString());
 			}
 			
-		}
-		else if(cmd.hasOption("resetState")) {
-			//TODO bug unable to reset state for last_extract_run
-			String[] optionValues = cmd.getOptionValues("resetState");
-			if(optionValues.length == 0) {
-				System.out.println("usage: resetState objectId index_time {extractTime}. Date format is yyyyMMdd. -1 is valid value for initial position");
-				return;
-			}
-			String objectId = optionValues[0];
-			DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-			try {
-				boolean clearIndex = false;
-				boolean clearExtract = false;
-				Date extractTime = new Date(0);
-				Date indexTime = new Date(0);
-				String indexTimeStr = optionValues[1];
-				if(indexTimeStr.equals("-1"))
-					clearIndex = true;
-				else
-					indexTime = dateFormat.parse(indexTimeStr);
-				if(optionValues.length == 3) {
-					String extractTimeStr = optionValues[2];
-					if(extractTimeStr.equals("-1"))
-						clearExtract = true;
-					else
-						extractTime = dateFormat.parse(extractTimeStr);
-				}
-				System.out.println("Reset server state to " + indexTime + "," + extractTime);
-				ConsoleAppRuntimeInfo.init(null);
-				RuntimeInfo.getCurrentInfo().startThread();
-				ServerState state = RuntimeInfo.getCurrentInfo().getInternalState(objectId);
-				if(clearIndex)
-					state.setLastIndexRun(-1);
-				else
-					state.setLastIndexRun(indexTime.getTime());
-				if(optionValues.length == 3) {
-					if(clearExtract)
-						state.setLastExtractRun(-1);
-					else
-						state.setLastExtractRun(extractTime.getTime());
-				}
-				RuntimeInfo.getCurrentInfo().finishThread();
-				System.out.println("Server state reset successfull");
-			}
-			catch(Exception e) {
-				System.out.println("usage: resetState index_time {extractTime}");
-				return;			
-			}
-
-		}
-		else if(cmd.hasOption("displayDate")) {
-			String[] optionValues = cmd.getOptionValues("displayDate");
-			if(optionValues.length == 0) {
-				System.out.println("usage: displayDate date. Date format is yyyyMMdd.");
-				return;
-			}
-			DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-			try {
-				Date date = new Date(0);
-				String dateStr = optionValues[0];
-				date = dateFormat.parse(dateStr);				
-				System.out.println("The given date " + date + " Number of milliseconds is " + date.getTime());				
-			}
-			catch(Exception e) {
-				System.out.println("usage: displayDate {date}");
-				return;			
-			}
-
 		}		
-		
 		else if(cmd.hasOption("createIndexTable")) {
 			MultitenantRuntimeInfo.init(null);
 			DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));

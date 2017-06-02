@@ -62,7 +62,6 @@
 	<classpathentry kind="lib" path="external-libs/softlib/VirtualAgent.AzureStorage.jar"/>
 	<classpathentry kind="lib" path="external-libs/softlib/VirtualAgent.JavaHelper.jar"/>
 	<classpathentry kind="lib" path="external-libs/softlib/VirtualAgent.StorageInterfaces.jar"/>
-	<classpathentry kind="lib" path="external-libs/saxon/saxon9he.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="external-libs/quartz/quartz-1.6.6.jar"/>
 	<classpathentry kind="lib" path="external-libs/apache-commons/commons-cli-1.2.jar"/>
@@ -82,5 +81,6 @@
 	<classpathentry kind="lib" path="external-libs/spring/spring-beans.jar"/>
 	<classpathentry kind="lib" path="external-libs/spring/spring-context.jar"/>
 	<classpathentry kind="lib" path="external-libs/spring/spring-core.jar"/>
+	<classpathentry kind="lib" path="external-libs/saxon/saxon-he-9.5.1.5.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

@@ -39,7 +39,6 @@ import com.softlib.imatch.distance.TermsByPositions;
 import com.softlib.imatch.matcher.ITicketsRepository;
 import com.softlib.imatch.matcher.MatchCandidate;
 import com.softlib.imatch.matcher.lucene.LuceneTicketsRepository;
-import com.softlib.imatch.model.IComparator;
 import com.softlib.imatch.proximity.ProximityConfig;
 import com.softlib.imatch.proximity.ProximityConfigRule;
 import com.softlib.imatch.proximity.ProximityData;
@@ -68,7 +67,7 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 
 	private boolean loaded = false;
 	
-	private List<ISpecialTextHandler> textCleaners;
+	private List<ISpecialTextHandler> textHandlers;
 	private static ITokenizer dictionaryTokenizer = 
 		new SimpleCommaTokenizer(new char[] {' ','=','\n','\t','?','!',';','&'});
 	private static Logger log = Logger.getLogger(TechnicalDictionary.class);
@@ -152,28 +151,19 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 	};
 
 	public TechnicalDictionary() {
-		this(true);
-	}
-	
-	public TechnicalDictionary(boolean register) {
 		terms = new ThreadSafeTerms();
 		idSession.set(null);
 		deletedTerms = new ThreadSafeTerms();
 	}
 	
-	public TechnicalDictionary(IConfigurationResourceLoader loader)
+	public void setTextCleaners(List<ISpecialTextHandler> handlers)
 	{
-		this();
-	}
-	
-	public void setTextCleaners(List<ISpecialTextHandler> cleaners)
-	{
-		textCleaners = cleaners;
+		textHandlers = handlers;
 	}
 	
 	public List<ISpecialTextHandler> getSpecialTextHandlers()
 	{
-		return textCleaners;
+		return textHandlers;
 	}
 	
 	public static ITokenizer dictionaryTokenizer() 
@@ -217,21 +207,13 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 		return get(termKey,false);
 	}
 	
-	public TechnicalDictionaryTerm get(TechnicalDictionaryKey termKey,boolean includeLowFreq) {		
-		TechnicalDictionaryTerm term = getTerm(termKey, includeLowFreq);
-		if (term==null) {
-			termKey.clean();
-			term = getTerm(termKey, includeLowFreq);
-		}
-		return term;
-	}
-	
-	private TechnicalDictionaryTerm getTerm(TechnicalDictionaryKey termKey,boolean includeLowFreq) {
+	public TechnicalDictionaryTerm get(TechnicalDictionaryKey termKey, boolean includeLowFreq) {
 		TechnicalDictionaryTerm term = terms.get(termKey);
-		if (term==null)
-			return null;
-		if (!includeLowFreq && term.getFrequency()<2)
-			return null;
+		if (term==null || (!includeLowFreq && term.getFrequency()<2))
+		{
+			termKey.clean();
+			return terms.get(termKey);		
+		}
 		return term;
 	}
 	
@@ -286,8 +268,8 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 		return termsList;
 	}
 
-	public FindTermsInText getFindTermsInText() {
-		return new FindTermsInText(terms, termNGrams);
+	public TermsInTextFinder getFinder() {
+		return new TermsInTextFinder(terms, termNGrams);
 	}
 	
 	public List<TechnicalDictionaryTerm> findInText(String[] words) {
@@ -295,7 +277,7 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 	}
 	
 	public List<TechnicalDictionaryTerm> findInText(String[] words, boolean withRelations) {
-		FindTermsInText FindTermsInText = getFindTermsInText();
+		TermsInTextFinder FindTermsInText = getFinder();
 		TermsByPositions termsByPositions = FindTermsInText.getFoundTerms(words,withRelations);
 		return termsByPositions.getTerms();
 	}	
@@ -559,21 +541,6 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 	public void undoReduceTermFreq() {
 		reduceTermFreq.undoReduce();
 	}
-
-	
-	public List<TechnicalDictionaryTerm> select(String text, IComparator comparator) {
-		List<TechnicalDictionaryTerm> selectedTerms = new ArrayList<TechnicalDictionaryTerm>();
-		
-		for (Iterator<TechnicalDictionaryTerm> iterator = termsIterator(); iterator.hasNext();) {
-			TechnicalDictionaryTerm term = (TechnicalDictionaryTerm) iterator.next();
-			
-			if (comparator.Compare(text, term)) {
-				selectedTerms.add(term);
-			}
-		}
-
-		return selectedTerms;
-	}
 	
 	public Collection<TechnicalDictionaryTerm> removeTermByUser(TechnicalDictionaryKey termKey) {
 		TechnicalDictionaryTerm term = terms.get(termKey);
@@ -811,7 +778,7 @@ public class TechnicalDictionary implements ITechnicalDictionary , ITechnicalTer
 	{
 		TracerFile traceFile = TracerFileLast.create(TracerFileLast.SubstitutedTerms,"result",false);
 		LogUtils.info(log, "Start adding substituted terms");
-		FindTermsInText findTermsInText = getFindTermsInText();
+		TermsInTextFinder findTermsInText = getFinder();
 		SynonymsRelation relation = new SynonymsRelation();
 		int count = 0;
 		int totalSize = termsCollection().size();

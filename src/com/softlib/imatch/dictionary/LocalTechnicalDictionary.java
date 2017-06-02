@@ -15,7 +15,7 @@ public class LocalTechnicalDictionary extends TechnicalDictionary {
 	public LocalTechnicalDictionary(TechnicalDictionary dictionary,
 									boolean isSupportReduceTermFreq, 
 									boolean isSourceTicket) {
-		super(false);
+		super();
 		this.dictionary = dictionary;
 		this.isSupportReduceTermFreq = isSupportReduceTermFreq;
 		this.isSourceTicket = isSourceTicket;

@@ -65,7 +65,7 @@ public class ExtractTechPatternTest {
 		ConsoleAppRuntimeInfo.init(null);
 		DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));			
 		IConfigurationResourceLoader loader = (IConfigurationResourceLoader)RuntimeInfo.getCurrentInfo().getBean("xmlConfigurationResourceLoader");
-		container = new TechnicalDictionary(loader);
+		container = new TechnicalDictionary();
 		initContainer();
 		patternSource = container.addSource("Patterns5");
 		patternSource.setSourceBoost(5);

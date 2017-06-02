@@ -11,7 +11,6 @@ import com.softlib.imatch.ITicket;
 import com.softlib.imatch.ITicketProvider;
 import com.softlib.imatch.ITicketRetrievedCallback;
 import com.softlib.imatch.matcher.TicketingSystemIntegrationConfig;
-import com.softlib.imatch.model.User;
 
 public abstract class BaseTicketProvider implements ITicketProvider
 {

@@ -29,7 +29,7 @@ import com.softlib.imatch.distance.TermsByPositions;
  * Equals to findRelations(words, false)
  */
 
-public class FindTermsInText {
+public class TermsInTextFinder {
 	
 	private final ThreadSafeTerms terms;
 	private TermsNGrams termNGrams;
@@ -39,7 +39,7 @@ public class FindTermsInText {
 	private int minLength = 1;
 	private int maxLength = 4;
 
-	public FindTermsInText(ThreadSafeTerms terms, TermsNGrams termNGrams) {
+	public TermsInTextFinder(ThreadSafeTerms terms, TermsNGrams termNGrams) {
 		this.terms = terms;
 		allowSources = new HashSet<TechnicalTermSource>();
 		externTermsByKey = new HashMap<TechnicalDictionaryKey, TechnicalDictionaryTerm>();

@@ -67,7 +67,7 @@ public class MultitenantRuntimeInfo extends RuntimeInfo
 		runtimeInfo.getBean("xmlConfigurationResourceLoader");
 	}
 			
-	public void loadSoluion(String solutionName)
+	public void loadSolution(String solutionName)
 	{
 		if(!loadedSolutions.containsKey(solutionName)) {
             synchronized (loadedSolutions) {
@@ -277,7 +277,7 @@ public class MultitenantRuntimeInfo extends RuntimeInfo
 	private void setCurrentSolution(String solutionName)
 	{
 		if(!loadedSolutions.containsKey(solutionName))
-			loadSoluion(solutionName);
+			loadSolution(solutionName);
 		else
 			currentSolution.set(loadedSolutions.get(solutionName));
 	}

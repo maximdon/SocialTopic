@@ -48,7 +48,7 @@ public class ExtractProximityTermsTest {
 		ConsoleAppRuntimeInfo.init(null);
 		DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));			
 		IConfigurationResourceLoader loader = (IConfigurationResourceLoader)RuntimeInfo.getCurrentInfo().getBean("xmlConfigurationResourceLoader");
-		container = new TechnicalDictionary(loader);
+		container = new TechnicalDictionary();
 		initContainer();
 		patternSource = container.addSource("Prox SoftLib-SoftLib");
 		patternSource.setSourceBoost(5);

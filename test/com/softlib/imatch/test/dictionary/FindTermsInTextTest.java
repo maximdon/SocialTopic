@@ -15,7 +15,7 @@ import org.junit.Test;
 
 import com.softlib.imatch.ConsoleAppRuntimeInfo;
 import com.softlib.imatch.RuntimeInfo;
-import com.softlib.imatch.dictionary.FindTermsInText;
+import com.softlib.imatch.dictionary.TermsInTextFinder;
 import com.softlib.imatch.dictionary.SynonymsRelation;
 import com.softlib.imatch.dictionary.TechnicalDictionary;
 import com.softlib.imatch.dictionary.TechnicalDictionaryKey;
@@ -46,7 +46,7 @@ public class FindTermsInTextTest {
 
 	@Test
 	public void testFindTermsWithSource() {
-		FindTermsInText findUserTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findUserTerms = dictionary.getFinder();
 		TechnicalDictionaryTerm term1 = dictionary.addTermByUser(new TechnicalDictionaryKey("test find terms"));
 		term1.setTermSource(dictionary.getSource(41));
 		findUserTerms.addAllowSource(dictionary.getSource(41));
@@ -57,7 +57,7 @@ public class FindTermsInTextTest {
 	
 	@Test
 	public void testFindTermsWithWrongSource() {
-		FindTermsInText findUserTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findUserTerms = dictionary.getFinder();
 		TechnicalDictionaryTerm term1 = dictionary.addTermByUser(new TechnicalDictionaryKey("test find terms"));
 		term1.setTermSource(dictionary.getSource(41));
 		findUserTerms.addAllowSource(dictionary.getSource(40));
@@ -68,7 +68,7 @@ public class FindTermsInTextTest {
 	
 	@Test
 	public void testFindTermsWithLengthLimit() {
-		FindTermsInText findUserTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findUserTerms = dictionary.getFinder();
 		findUserTerms.setMinLength(5);
 		findUserTerms.setMaxLength(8);
 		dictionary.addTermByUser(new TechnicalDictionaryKey("test find terms size five"));		
@@ -79,7 +79,7 @@ public class FindTermsInTextTest {
 	
 	@Test
 	public void testFindTermsWithShortLengthLimit() {
-		FindTermsInText findUserTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findUserTerms = dictionary.getFinder();
 		findUserTerms.setMinLength(5);
 		findUserTerms.setMaxLength(8);
 		dictionary.addTermByUser(new TechnicalDictionaryKey("test find terms"));		

@@ -28,7 +28,7 @@ public class HighlightTextTest {
 		ConsoleAppRuntimeInfo.init(null);
 		DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));			
 
-		dictionary = new TechnicalDictionary(false);		
+		dictionary = new TechnicalDictionary();		
 		simpleSource = dictionary.addSource("simple");
 		complexSource = dictionary.addSource("complex");
 	}

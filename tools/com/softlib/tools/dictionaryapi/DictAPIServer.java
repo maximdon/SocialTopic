@@ -14,7 +14,7 @@ import com.softlib.imatch.common.HighlightText;
 import com.softlib.imatch.common.LogUtils;
 import com.softlib.imatch.common.SourceMngr;
 import com.softlib.imatch.common.SourceMngr.Type;
-import com.softlib.imatch.dictionary.FindTermsInText;
+import com.softlib.imatch.dictionary.TermsInTextFinder;
 import com.softlib.imatch.dictionary.SynonymsRelation;
 import com.softlib.imatch.dictionary.TechnicalDictionary;
 import com.softlib.imatch.dictionary.TechnicalDictionaryKey;
@@ -161,7 +161,7 @@ public class DictAPIServer {
         allTerms.addAll(processedTicket.getZeroFreqTerms());
         allTerms.addAll(processedTicket.getOneFreqTerms());
         TechnicalDictionary dictionary = (TechnicalDictionary)RuntimeInfo.getCurrentInfo().getBean("dictionary");
-		FindTermsInText findTermsInText = dictionary.getFindTermsInText();
+		TermsInTextFinder findTermsInText = dictionary.getFinder();
 		String[] words = ticket.getBody(MatchMode.all).split(" ");
 		List<TechnicalDictionaryTerm> shortTerms = findTermsInText.findShortestTerms(words);
 		SynonymsRelation relation = new SynonymsRelation();

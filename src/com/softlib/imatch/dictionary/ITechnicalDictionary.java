@@ -47,7 +47,7 @@ public interface ITechnicalDictionary {
 	 */
 	public Iterator<TechnicalDictionaryTerm> termsIterator();
 		
-	public FindTermsInText getFindTermsInText();
+	public TermsInTextFinder getFinder();
 
 	public TechnicalTermSource getSource(String sourceName);
 

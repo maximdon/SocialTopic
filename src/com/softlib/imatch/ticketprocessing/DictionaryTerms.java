@@ -8,7 +8,7 @@ import com.softlib.imatch.ITicket;
 import com.softlib.imatch.MatcherException;
 import com.softlib.imatch.RuntimeInfo;
 import com.softlib.imatch.common.StringUtils;
-import com.softlib.imatch.dictionary.FindTermsInText;
+import com.softlib.imatch.dictionary.TermsInTextFinder;
 import com.softlib.imatch.dictionary.ITechnicalDictionary;
 import com.softlib.imatch.dictionary.ITechnicalTermsContainer;
 import com.softlib.imatch.dictionary.TechnicalDictionary;
@@ -33,18 +33,18 @@ public class DictionaryTerms extends BaseTicketProcessStep {
 
 		String[] words = TechnicalDictionary.dictionaryTokenizer().split(cleanText);
 		
-		FindTermsInText findAllTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findAllTerms = dictionary.getFinder();
 		TermsByPositions allTermsByPositions = findAllTerms.getFoundTerms(words,false);
 		dictTerms.addAll(allTermsByPositions.getTerms());
 
-		FindTermsInText findUserTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findUserTerms = dictionary.getFinder();
 		findUserTerms.setMinLength(5);
 		findUserTerms.setMaxLength(9);
 		findUserTerms.addAllowSource(dictionary.getSource("User Defined"));
 		TermsByPositions userTermsByPositions = findUserTerms.getFoundTerms(words,false);
 		dictTerms.addAll(userTermsByPositions.getTerms());
 		
-		FindTermsInText findQuoteTerms = dictionary.getFindTermsInText();
+		TermsInTextFinder findQuoteTerms = dictionary.getFinder();
 		findQuoteTerms.setMinLength(5);
 		findQuoteTerms.setMaxLength(9);
 		findQuoteTerms.addAllowSource(dictionary.getSource("quoteTerms"));

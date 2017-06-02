@@ -369,7 +369,7 @@ public class DictionaryTest {
 		ConsoleAppRuntimeInfo.init(null);
 		DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));
 
-		TechnicalDictionary dictionary = new TechnicalDictionary(false);
+		TechnicalDictionary dictionary = new TechnicalDictionary();
 		dictionary.addTerm(new TechnicalDictionaryKey("aaa"));
 		dictionary.addTerm(new TechnicalDictionaryKey("bbb"));
 		dictionary.addTerm(new TechnicalDictionaryKey("ccc"));
@@ -388,7 +388,7 @@ public class DictionaryTest {
 		ConsoleAppRuntimeInfo.init(null);
 		DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));
 
-		TechnicalDictionary dictionary = new TechnicalDictionary(false);
+		TechnicalDictionary dictionary = new TechnicalDictionary();
 		dictionary.addTerm(new TechnicalDictionaryKey("aaa"));
 		dictionary.addTerm(new TechnicalDictionaryKey("bbb"));
 		dictionary.addTerm(new TechnicalDictionaryKey("ccc"));

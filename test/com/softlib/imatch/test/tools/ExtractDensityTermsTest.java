@@ -46,7 +46,7 @@ public class ExtractDensityTermsTest {
 		ConsoleAppRuntimeInfo.init(null);
 		DOMConfigurator.configure(RuntimeInfo.getCurrentInfo().getRealPath("/{SolutionConfigFolder}/log4j-console.xml"));			
 		IConfigurationResourceLoader loader = (IConfigurationResourceLoader)RuntimeInfo.getCurrentInfo().getBean("xmlConfigurationResourceLoader");
-		container = new TechnicalDictionary(loader);
+		container = new TechnicalDictionary();
 		initContainer();
 		densitySource = container.addSource("Density");
 		densitySource.setSourceBoost(5);

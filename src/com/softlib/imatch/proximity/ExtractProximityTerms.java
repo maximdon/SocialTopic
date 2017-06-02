@@ -16,7 +16,7 @@ import com.softlib.imatch.common.TracerFileLast;
 import com.softlib.imatch.common.configuration.ConfigurationException;
 import com.softlib.imatch.common.configuration.IConfigurationResource;
 import com.softlib.imatch.common.configuration.IConfigurationResourceLoader;
-import com.softlib.imatch.dictionary.FindTermsInText;
+import com.softlib.imatch.dictionary.TermsInTextFinder;
 import com.softlib.imatch.dictionary.SynonymsRelation;
 import com.softlib.imatch.dictionary.TechnicalDictionary;
 import com.softlib.imatch.dictionary.TechnicalDictionaryKey;
@@ -69,7 +69,7 @@ public class ExtractProximityTerms  {
 	public List<ProximityData> process(String sentence)  {
 		List<ProximityData> rc = new ArrayList<ProximityData>();
 		String split[] = sentence.split(" ");
-		FindTermsInText findTermsInText = dictionary.getFindTermsInText();
+		TermsInTextFinder findTermsInText = dictionary.getFinder();
 		findTermsInText.addExternTerms(externTerms);
 		TermsByPositions termsByPositions = findTermsInText.getFoundTerms(split,false);
 		Map<TermPosition,TechnicalDictionaryTerm> result =

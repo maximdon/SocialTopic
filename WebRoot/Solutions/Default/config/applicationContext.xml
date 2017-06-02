@@ -12,8 +12,7 @@
 	</bean>	
 	<bean id="multitenantObjectCreator" class="com.softlib.imatch.MultitenantSolutionBeanCreator">
 	</bean>
-	<bean id="dictionary" class="com.softlib.imatch.dictionary.TechnicalDictionary">
-		<constructor-arg ref="xmlConfigurationResourceLoader"></constructor-arg>
+	<bean id="dictionary" class="com.softlib.imatch.dictionary.TechnicalDictionary">		
 		<property name="textCleaners">
 			<list>
 				<ref bean="javaExceptionCleaner"/>

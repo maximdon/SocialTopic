@@ -13,7 +13,7 @@ public class WriteTechnicalDictionary extends TechnicalDictionary {
 	private TechnicalDictionary dictionary;
 
 	public WriteTechnicalDictionary(TechnicalDictionary dictionary) {
-		super(false);
+		super();
 		this.dictionary = dictionary;
 	}
 
