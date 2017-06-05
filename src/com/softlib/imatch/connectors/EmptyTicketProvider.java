@@ -38,14 +38,4 @@ public class EmptyTicketProvider implements ITicketProvider {
 	public TicketingSystemIntegrationConfig getConfig() {
 		return ticketingSystemConfig;
 	}
-
-	@Override
-	public ITicket getForDisplay(String ticketId) throws MatcherException {
-		return null;
-	}
-
-	@Override
-	public void save() {
-	}
-
 }

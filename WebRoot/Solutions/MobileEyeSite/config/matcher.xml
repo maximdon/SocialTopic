@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <matchConfig>
-	<object id="_COMMON_">
-		<ticketingSystemIntegration type="database">
-			<dbSettings>
-				<connectionParam key="connectionString" value="jdbc:sqlserver://192.168.10.25;databaseName=AttunityEResolve;user=sa;password=Softlib_2;"/>
-				<connectionParam key="maxIdle" value="10"/>
-				<connectionParam key="maxActive" value="5"/>
-			</dbSettings>
-			<singleTicketStatement>select IssueID _COMMA_ Subject _COMMA_ Detail from Issues Where IssueID = ?</singleTicketStatement>   
-			<!--<singleTicketStatement concatFields="ActDesc">select iss.IssueID _COMMA_ OpenDate _COMMA_ Subject _COMMA_ Detail _COMMA_ Solution _COMMA_ act.ActDescription as ActDesc from Issues iss Left Outer Join Activities act ON iss.IssueID = act.IssueID Where iss.IssueID = ? ORDER BY act.ActDate </singleTicketStatement>--> 
-			<displayTicketStatement concatFields="ActDesc">select iss.IssueID _COMMA_ OpenDate _COMMA_ Subject _COMMA_ Detail _COMMA_ Solution _COMMA_ act.ActDescription as ActDesc from Issues iss Left Outer Join Activities act ON iss.IssueID = act.IssueID Where iss.IssueID = ? ORDER BY act.ActDate </displayTicketStatement> 
-			<!-- TODO remove query analyzer -->
-			<changedTicketsStatement concatFields="ActDesc" queryAnalyzer="millisecondsToDateStatementAnalyzer">select iss.IssueID _COMMA_ OpenDate _COMMA_ Status _COMMA_ Subject _COMMA_ Detail _COMMA_ Solution _COMMA_ act.ActDescription as ActDesc _COMMA_  iss.ModifiedDate - iss.OpenDate TicketState from Issues iss Left Outer Join Activities act ON iss.IssueID = act.IssueID Where iss.IssueID &gt; 11000 and Status not like '%Invalid/Dup%' and iss.ModifiedDate > Convert(DateTime _COMMA_ ? _COMMA_ 112) ORDER BY iss.IssueID </changedTicketsStatement>
-			<allTicketsStatement concatFields="ActDesc">select iss.IssueID _COMMA_ OpenDate _COMMA_ Status _COMMA_ Subject _COMMA_ Detail _COMMA_ Solution _COMMA_ act.ActDescription as ActDesc from Issues iss Left Outer Join Activities act ON iss.IssueID = act.IssueID Where iss.IssueID &gt; 11000 and Status not like '%Invalid/Dup%' ORDER BY iss.IssueID DESC </allTicketsStatement>
-			<allTicketsCountStatement>select count(iss.IssueID) from Issues iss Where iss.IssueID &gt; 11000 and Status not like '%Invalid/Dup%'</allTicketsCountStatement>
+	<object id="cases">
+		<ticketingSystemIntegration type="test">
+			<singleTicketStatement></singleTicketStatement>   
+			<displayTicketStatement></displayTicketStatement>
+			<changedTicketsStatement></changedTicketsStatement>
+			<allTicketsStatement></allTicketsStatement>
+			<allTicketsCountStatement></allTicketsCountStatement>
 			<fieldMapping>
 				<idField>IssueID</idField>
 				<titleField>Subject</titleField>
@@ -73,138 +66,6 @@
 			<activeInRematch>true</activeInRematch>
 		</termsDistance>	
 	</object>
-	<object id="cases">
-		<ticketingSystemIntegration type="convertFile">
-			<fileSettings>
-				<connectionParam key="connectionString" value="allTicketsFolder=C:\temp\WebRobot\mobileye;singleTicketFolder=C:\temp\WebRobot\mobileye"/>
-				<connectionParam key="charset" value="ISO-8859-1"/>
-				<connectionParam key="fileExtension" value="txt"/>
-				<connectionParam key="includeSubfolders" value="true"/>
-				<connectionParam key="sections" value="Title,URL,Body,Keywords"/>
-				<connectionParam key="Title" value="^_Title:"/>
-				<connectionParam key="URL" value="^_Url:"/>
-				<connectionParam key="Body" value="^_Body:"/>
-				<connectionParam key="Keywords" value="^_Keywords:"/>	 
-			</fileSettings>
-			<convertSettings>
-				<param key="convertActive" value="true"/>
-				<param key="convertCmd" value="C:\\Program Files\\Softlib\\iSolve Server\\GetFileText"/>
-				<param key="convertTimeoutSec" value="300"/>			
-			</convertSettings>
-					<singleTicketStatement>Title _COMMA_ Description</singleTicketStatement> 
-			<displayTicketStatement>Title _COMMA_ Description</displayTicketStatement>
-			<changedTicketsStatement></changedTicketsStatement>
-			<allTicketsStatement>Title _COMMA_ Body _COMMA_ Keywords</allTicketsStatement>
-			<allTicketsCountStatement></allTicketsCountStatement>
-			<fieldMapping>
-				<idField>idField</idField>
-				<titleField>Title</titleField>
-				<stateField>State</stateField>
-			</fieldMapping>
-			<bodyFields>
-				<field name="Body"/>
-			</bodyFields>
-		</ticketingSystemIntegration>
-		<searcher type="lucene">
-			<indexFilesLocation>c:\Temp\WebRobot\indexes</indexFilesLocation>
-			<indexIntervalSeconds>600000</indexIntervalSeconds>
-			<extractIntervalSeconds>1200000</extractIntervalSeconds>
-			<numThreadsInPool>1</numThreadsInPool>
-			<indexBufferSize>200</indexBufferSize>
-			<extractBufferSize>200</extractBufferSize>
-			<minimumNumCandidates>100</minimumNumCandidates>
-			<maximumNumCandidates>500</maximumNumCandidates>
-			<indexSpecialFields>
-				<!-- Note, adding special fields requires reindexing (removing doesn't) -->
-			</indexSpecialFields>
-		</searcher>
-		<candidatesFilter>
-			<mode name="match" separateObjectsForFilter="true" filterPercentageDropOff="5" maxAuthCandidates="20" maxNumCandidates="5" minCandidateScore="-1" maxCandidateScore="0.99" maxScoreDistancePercentage="50"/>
-			<mode name="rematch" separateObjectsForFilter="true" filterPercentageDropOff="5" maxAuthCandidates="20" maxNumCandidates="5" minCandidateScore="-1" maxCandidateScore="0.99" maxScoreDistancePercentage="50"/>
-		</candidatesFilter>
-		<candidatesRanking>
-			<mode name="match">
-				<rank name="duplicate" icon="duplicate.jpg" intValue="4">
-				   <condition fieldName="score" operator="gt" value="0.8"/>
-				</rank>
-				<rank name="similar" icon="similar.jpg" intValue="3">
-				  <condition fieldName="score" operator="gt" value="0.55"/>
-				</rank>
-				<rank name="related" icon="related.jpg" intValue="2">
-					<condition fieldName="score" operator="gt" value="0.15"/>
-				</rank>
-			</mode>
-			<mode name="rematch">
-				<rank name="duplicate" icon="duplicate.jpg" intValue="4">
-				   <condition fieldName="score" operator="gt" value="0.85"/>
-				</rank>
-				<rank name="similar" icon="similar.jpg" intValue="3">
-				  <condition fieldName="score" operator="gt" value="0.65"/>
-				</rank>
-				<rank name="related" icon="related.jpg" intValue="2">
-					<condition fieldName="score" operator="gt" value="0.45"/>
-				</rank>
-			</mode>
-		</candidatesRanking>
-		<viewLayout>
-			<resultColumns>
-				<column name="OpenDate" title="Open Date"/>
-			</resultColumns>
-			<detailsURL>detailsView.jsf?id={IssueID}</detailsURL>
-		</viewLayout>
-	</object>
- <!--  <object id="jira">
-		<ticketingSystemIntegration type="jira">
-			<jiraSettings>
-				<connectionParam key="connectionString" value="https://jira.atlassian.com/rpc/soap/jirasoapservice-v2"/>
-				<connectionParam key="userName" value="softlib"/>
-				<connectionParam key="password" value="softlib"/>
-				<connectionParam key="range" value="100"/>
-				<connectionParam key="doComments" value="true"/>
-				<connectionParam key="doAttachments" value="false"/>
-			</jiraSettings>
- 			<convertSettings>
-				<param key="convertActive" value="true"/>
-				<param key="convertCmd" value="C:\Softlib\Code\iSolve.8.1\Debug-Win32\GetFileText"/>
-				<param key="convertTimeoutSec" value="300"/>			
-			</convertSettings>
-			
-			<singleTicketStatement></singleTicketStatement>   
-			<displayTicketStatement></displayTicketStatement>
-			<changedTicketsStatement>updated > {DATE}</changedTicketsStatement>
-			<allTicketsStatement>PROJECT = 'JIRA'</allTicketsStatement>
-			<allTicketsCountStatement></allTicketsCountStatement>
-			<fieldMapping>
-				<idField>Key</idField>
-				<titleField>Summary</titleField>
-				<stateField>Status</stateField>
-			</fieldMapping>
-			<bodyFields>							
-				<field name="Description"/>
-				<field name="Comments"/>
-				<field name="Attachments"/>
-			</bodyFields>
-		</ticketingSystemIntegration>
-		<authorize type="sap">
-			<batchSize>1000</batchSize>
-			<query></query> 
-		</authorize>				
-		<searcher type="lucene">
-			<indexFilesLocation>c:\Temp\Attunity\indexes</indexFilesLocation>
-			<indexIntervalSeconds>600000</indexIntervalSeconds>
-			<extractIntervalSeconds>1200000</extractIntervalSeconds>
-			<numThreadsInPool>4</numThreadsInPool>
-			<indexBufferSize>200</indexBufferSize>
-			<extractBufferSize>200</extractBufferSize>
-			<minimumNumCandidates>100</minimumNumCandidates>
-			<maximumNumCandidates>500</maximumNumCandidates>
-			<indexSpecialFields>
-			</indexSpecialFields>
-		</searcher>		
-		<viewLayout>
-			<detailsURL>https://jira.atlassian.com/browse/{Key}</detailsURL>
-		</viewLayout>
-	</object> -->	 
  <!--  <object id="PST">
 		<ticketingSystemIntegration type="pst">
 			<pstSettings>

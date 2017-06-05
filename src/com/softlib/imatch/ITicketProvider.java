@@ -19,8 +19,6 @@ public interface ITicketProvider {
 	 */
 	ITicket get(String id) throws MatcherException;
 
-	ITicket getForDisplay(String ticketId) throws MatcherException;
-
 	/**
 	 * Retrieves all existing tickets in the ticketing system DB.
 	 * Used for the initial indexing of the ticketing system
@@ -34,7 +32,4 @@ public interface ITicketProvider {
 	void getChangedTickets(long lastRunTime, ITicketRetrievedCallback callback) throws MatcherException;
 	 
 	TicketingSystemIntegrationConfig getConfig();
-	
-	void save();
-
 };

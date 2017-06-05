@@ -43,7 +43,7 @@ public class ExtractTechTokensByNLPTest {
 			dictionary.loadDictionary();
 			String objectId = "cases";
 			ITicketProvider provider = (ITicketProvider) RuntimeInfo.getCurrentInfo().getBean(TicketProviderFactory.getProviderId(objectId));
-			ITicket ticket= provider.getForDisplay("7010");
+			ITicket ticket= provider.get("7010");
 //			IProcessedTicket processedTicket = new ProcessedTicket(ticket, ProcessedTicket.getDefaultCalculator());
 			ExtractTechTokensByNLP step = new ExtractTechTokensByNLP();
 			step.run("TestField",ticket,getTermsContainer(), new StepContext("1"));

@@ -151,7 +151,8 @@ public class DictionaryBuilder implements ITicketRetrievedCallback, IProgressNot
 			try {
 				__saveLock.lockWrite();
 				dictionary.save(session);
-				ticketProvider.save();
+				//TODO check there
+				//ticketProvider.save();
 
 			}
 			catch (Exception e) {
@@ -325,7 +326,8 @@ public class DictionaryBuilder implements ITicketRetrievedCallback, IProgressNot
 					Session session = RuntimeInfo.getCurrentInfo().getHibernate().acquireSession(SessionMode.READ_WRITE);
 					try {
 						dictionary.save(session);
-						ticketProvider.save();
+						//TODO check there
+						//ticketProvider.save();
 						newRecoveryPosition = getRecoveryPosition(currentTicket);
 					} 
 					catch (Exception e) {
@@ -343,7 +345,8 @@ public class DictionaryBuilder implements ITicketRetrievedCallback, IProgressNot
 						Session session = RuntimeInfo.getCurrentInfo().getHibernate().acquireSession(SessionMode.READ_WRITE);
 						try {
 							dictionary.save(session);
-							ticketProvider.save();
+							//TODO check there
+							//ticketProvider.save();
 							newRecoveryPosition = getRecoveryPosition(currentTicket);
 							builderState.setRecoveryPosition(newRecoveryPosition);
 							builderState.setRelationsRecoveryPosition(-1);

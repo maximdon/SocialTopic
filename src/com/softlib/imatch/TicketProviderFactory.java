@@ -7,8 +7,8 @@ import com.softlib.imatch.common.configuration.IConfigurationObject;
 import com.softlib.imatch.common.configuration.IConfigurationResource;
 import com.softlib.imatch.common.configuration.IConfigurationResourceLoader;
 import com.softlib.imatch.connectors.EmptyTicketProvider;
-import com.softlib.imatch.connectors.file.convert.ConvertFileTicketProvider;
 import com.softlib.imatch.connectors.file.disk.FileTicketProvider;
+import com.softlib.imatch.connectors.test.TestTicketProvider;
 import com.softlib.imatch.dbintegration.DBTicketProvider;
 import com.softlib.imatch.matcher.TicketingSystemIntegrationConfig;
 
@@ -24,7 +24,7 @@ public class TicketProviderFactory implements ICustomFactory, IContextInitializa
 	private IConfigurationObject config;
 	private final static String DB_INTEGRATION_TYPE = "database";
 	private final static String FILE_INTEGRATION_TYPE = "file";
-	private final static String CONVERT_FILE_INTEGRATION_TYPE = "convertFile";
+	private final static String TEST_INTEGRATION_TYPE = "test";
 	private final static String EMPTY_INTEGRATION_TYPE = "_empty_";
 	
 	public TicketProviderFactory(IConfigurationResourceLoader loader) {
@@ -42,8 +42,8 @@ public class TicketProviderFactory implements ICustomFactory, IContextInitializa
 				provider = new DBTicketProvider(beanName, createTicketingSystemConfig(beanName));			
 			else if (configurationType.equals(FILE_INTEGRATION_TYPE))
 				provider = new FileTicketProvider(beanName, createTicketingSystemConfig(beanName));
-			else if (configurationType.equals(CONVERT_FILE_INTEGRATION_TYPE))
-				provider = new ConvertFileTicketProvider(beanName, createTicketingSystemConfig(beanName));
+			else if (configurationType.equals(TEST_INTEGRATION_TYPE))
+				provider = new TestTicketProvider(beanName, createTicketingSystemConfig(beanName));
 			else if (configurationType.equals(EMPTY_INTEGRATION_TYPE))
 				provider = new EmptyTicketProvider(beanName, createTicketingSystemConfig(beanName));
 			providers.put(beanName, provider);

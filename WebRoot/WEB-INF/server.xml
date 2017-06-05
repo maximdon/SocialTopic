@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Config>
-	<config version="1.3.0" debugMode="false" solution="Default">
+	<config version="1.3.0" debugMode="false" solution="MobileEyeSite">
 		<serverUrl>http://localhost:8080/iMatch</serverUrl>
 		<iSolveRootFolder>C:\Program Files\Softlib\iSolve Server</iSolveRootFolder>
 	</config>

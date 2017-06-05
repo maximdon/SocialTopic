@@ -19,11 +19,7 @@ public class TicketingSystemIntegrationConfig implements IValidatableConfigurati
 	private TicketingSystemSettings dbSettings = new TicketingSystemSettings();
 	@XStreamConverter(TicketingSystemSettings.class)
 	private TicketingSystemSettings fileSettings = new TicketingSystemSettings();
-	@XStreamConverter(TicketingSystemSettings.class)
-	private TicketingSystemSettings convertSettings = new TicketingSystemSettings();
-	@XStreamConverter(TicketingSystemSettings.class)
-	private TicketingSystemSettings azureBlobsSettings = new TicketingSystemSettings();
-	
+		
 	@XStreamAsAttribute
 	private String ticketIdPattern; 
 	@XStreamConverter(Statement.class)
@@ -119,20 +115,7 @@ public class TicketingSystemIntegrationConfig implements IValidatableConfigurati
 	public void setFileSettings(TicketingSystemSettings fileSettings) {
 		this.fileSettings = fileSettings;
 	}
-	public TicketingSystemSettings getConvertSettings() {
-		return convertSettings;
-	}
-	public void setConvertSettings(TicketingSystemSettings convertSettings) {
-		this.convertSettings = convertSettings;
-	}
-
-	public void setAzureBlobsSettings(TicketingSystemSettings azureBlobsSettings) {
-		this.azureBlobsSettings = azureBlobsSettings;
-	}
-	public TicketingSystemSettings getAzureBlobsSettings() {
-		return azureBlobsSettings;
-	}
-
+	
 	public FieldBoostMapping getBoostMapping(){
 		if (boostMapping == null)
 			boostMapping = new FieldBoostMapping();
@@ -161,14 +144,9 @@ public class TicketingSystemIntegrationConfig implements IValidatableConfigurati
 			throw new ConfigurationValidationException("connectionString param is missing for db configuration");
 		if(fileSettings != null && fileSettings.isInitialized() && fileSettings.getConnectionString() == null)
 			throw new ConfigurationValidationException("connectionString param is missing for file configuration");
-		if(azureBlobsSettings != null && azureBlobsSettings.isInitialized() && azureBlobsSettings.getConnectionString() == null)
-			throw new ConfigurationValidationException("connectionString param is missing for azure blob configuration");
 	}
 	@Override
 	public void replacePlaceHolders() {
-		if(azureBlobsSettings == null)
-			return;
-		String connectionString = ConfigurationObject.replacePlaceHolders(azureBlobsSettings.getConnectionString());
-		azureBlobsSettings.setConnectionString(connectionString);
+		
 	}
 }
